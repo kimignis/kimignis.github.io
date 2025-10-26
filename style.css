@@ -1,3 +1,5 @@
+/* Neumorphism Design - Academic Portfolio */
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -6,22 +8,29 @@
 }
 
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --text-color: #333;
-    --light-bg: #f8f9fa;
-    --white: #ffffff;
-    --gray: #7f8c8d;
-    --border-color: #e1e8ed;
-    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --bg-color: #e0e5ec;
+    --text-primary: #4a5568;
+    --text-secondary: #718096;
+    --accent-color: #dc052d;
+    --shadow-light: #ffffff;
+    --shadow-dark: #a3b1c6;
+
+    /* Neumorphism shadows */
+    --neu-shadow: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light);
+    --neu-shadow-inset: inset 6px 6px 10px var(--shadow-dark), inset -6px -6px 10px var(--shadow-light);
+    --neu-shadow-hover: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--white);
+    color: var(--text-primary);
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -30,117 +39,154 @@ body {
     padding: 0 20px;
 }
 
-/* Navigation */
-.navbar {
-    background-color: var(--white);
-    box-shadow: var(--shadow);
-    position: sticky;
+/* Particles Background */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
     top: 0;
-    z-index: 1000;
-    padding: 1rem 0;
+    left: 0;
+    z-index: -1;
 }
 
-.navbar .container {
+/* Landing Section */
+.landing-section {
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    font-weight: 700;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--secondary-color);
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: var(--white);
-    padding: 6rem 0;
+    justify-content: center;
     text-align: center;
+    position: relative;
 }
 
-.hero-title {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+.landing-content {
+    z-index: 1;
+}
+
+.greeting {
+    font-size: 3.5rem;
     font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), -2px -2px 4px rgba(163, 177, 198, 0.4);
 }
 
-.hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    opacity: 0.9;
+.highlight-title {
+    color: var(--accent-color);
 }
 
-.hero-description {
-    font-size: 1.2rem;
-    opacity: 0.8;
-    margin-bottom: 2rem;
+.dynamic-text {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    min-height: 60px;
 }
 
-.social-links {
+.txt-rotate {
+    border-right: 0.1em solid var(--accent-color);
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.social-links-landing {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
-    margin-top: 2rem;
+    margin-bottom: 4rem;
 }
 
-.social-links a {
-    color: var(--white);
+.social-link {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color);
+    box-shadow: var(--neu-shadow);
+    color: var(--text-primary);
     font-size: 1.5rem;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.social-links a:hover {
+.social-link:hover {
+    box-shadow: var(--neu-shadow-hover);
+    color: var(--accent-color);
     transform: translateY(-3px);
-    opacity: 0.8;
+}
+
+.scroll-down {
+    animation: bounce 2s infinite;
+}
+
+.scroll-down a {
+    color: var(--text-secondary);
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Neumorphism Cards */
+.neumorphism-card-big {
+    background: var(--bg-color);
+    border-radius: 30px;
+    padding: 3rem;
+    box-shadow: var(--neu-shadow);
+    margin-bottom: 3rem;
+}
+
+.neumorphism-card {
+    background: var(--bg-color);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--neu-shadow);
+    transition: all 0.3s ease;
+}
+
+.neumorphism-card:hover {
+    box-shadow: var(--neu-shadow-hover);
+    transform: translateY(-5px);
+}
+
+.neumorphism-btn {
+    background: var(--bg-color);
+    box-shadow: var(--neu-shadow);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.neumorphism-btn:hover {
+    box-shadow: var(--neu-shadow-inset);
 }
 
 /* Sections */
 .section {
     padding: 5rem 0;
-}
-
-.section-alt {
-    background-color: var(--light-bg);
+    position: relative;
 }
 
 .section-title {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--text-primary);
     margin-bottom: 2rem;
     text-align: center;
-    position: relative;
-    padding-bottom: 1rem;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: var(--secondary-color);
-    border-radius: 2px;
+    font-weight: 700;
 }
 
 /* About Section */
@@ -149,68 +195,68 @@ body {
     margin: 0 auto;
     font-size: 1.1rem;
     line-height: 1.8;
+    color: var(--text-secondary);
 }
 
 .about-content p {
     margin-bottom: 1rem;
 }
 
-/* Education Timeline */
+/* Timeline */
 .timeline {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2rem auto 0;
     position: relative;
-    padding-left: 2rem;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    left: 0;
+    left: 30px;
     top: 0;
     bottom: 0;
-    width: 2px;
-    background-color: var(--secondary-color);
+    width: 3px;
+    background: linear-gradient(180deg, var(--shadow-dark), var(--accent-color));
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 2rem;
-    padding-left: 2rem;
+    margin-bottom: 2.5rem;
+    padding-left: 80px;
 }
 
 .timeline-marker {
     position: absolute;
-    left: -2.5rem;
-    top: 0.5rem;
-    width: 12px;
-    height: 12px;
+    left: 18px;
+    top: 5px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background-color: var(--secondary-color);
-    border: 3px solid var(--white);
-    box-shadow: 0 0 0 2px var(--secondary-color);
+    background: var(--bg-color);
+    box-shadow: var(--neu-shadow), inset 0 0 0 3px var(--accent-color);
 }
 
 .timeline-content h3 {
-    color: var(--primary-color);
+    color: var(--text-primary);
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 .institution {
-    color: var(--gray);
+    color: var(--text-secondary);
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
 
 .period {
-    color: var(--secondary-color);
+    color: var(--accent-color);
     font-weight: 500;
     margin-bottom: 0.5rem;
 }
 
 .description {
-    color: var(--text-color);
+    color: var(--text-secondary);
     line-height: 1.6;
 }
 
@@ -222,33 +268,22 @@ body {
     margin-top: 2rem;
 }
 
-.research-card {
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.section-alt .research-card {
-    background-color: var(--white);
-}
-
-.research-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
-
 .research-card h3 {
-    color: var(--primary-color);
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
+    font-weight: 600;
 }
 
 .research-period {
-    color: var(--secondary-color);
+    color: var(--accent-color);
     font-weight: 500;
     margin-bottom: 1rem;
+}
+
+.research-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
 .research-tags {
@@ -259,41 +294,44 @@ body {
 }
 
 .tag {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    padding: 0.25rem 0.75rem;
+    background: var(--bg-color);
+    color: var(--text-primary);
+    padding: 0.4rem 1rem;
     border-radius: 20px;
     font-size: 0.85rem;
+    box-shadow: 5px 5px 10px var(--shadow-dark), -5px -5px 10px var(--shadow-light);
 }
 
 /* Publications */
 .publications-list {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 2rem auto 0;
 }
 
 .publication-item {
-    background-color: var(--white);
-    padding: 1.5rem;
+    padding: 1.5rem 0;
     margin-bottom: 1.5rem;
-    border-left: 4px solid var(--secondary-color);
-    border-radius: 4px;
-    box-shadow: var(--shadow);
+    border-bottom: 2px solid var(--shadow-dark);
+}
+
+.publication-item:last-child {
+    border-bottom: none;
 }
 
 .publication-item h3 {
-    color: var(--primary-color);
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .authors {
-    color: var(--text-color);
+    color: var(--text-secondary);
     margin-bottom: 0.25rem;
 }
 
 .venue {
-    color: var(--gray);
+    color: var(--text-secondary);
     margin-bottom: 1rem;
 }
 
@@ -305,17 +343,13 @@ body {
 
 .btn-link {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: var(--secondary-color);
-    color: var(--white);
+    padding: 0.6rem 1.5rem;
+    color: var(--text-primary);
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-}
-
-.btn-link:hover {
-    background-color: var(--primary-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 /* Skills Grid */
@@ -326,23 +360,13 @@ body {
     margin-top: 2rem;
 }
 
-.skill-category {
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-}
-
-.section-alt .skill-category {
-    background-color: var(--white);
-}
-
 .skill-category h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
     font-size: 1.2rem;
-    border-bottom: 2px solid var(--secondary-color);
+    font-weight: 600;
     padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
 }
 
 .skill-category ul {
@@ -350,18 +374,20 @@ body {
 }
 
 .skill-category li {
-    padding: 0.5rem 0;
-    color: var(--text-color);
+    padding: 0.6rem 0;
+    color: var(--text-secondary);
     position: relative;
     padding-left: 1.5rem;
+    font-weight: 500;
 }
 
 .skill-category li::before {
     content: '▹';
     position: absolute;
     left: 0;
-    color: var(--secondary-color);
+    color: var(--accent-color);
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 /* Contact Section */
@@ -376,11 +402,13 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    color: var(--text-secondary);
 }
 
 .contact-content i {
-    color: var(--secondary-color);
-    width: 20px;
+    color: var(--accent-color);
+    width: 24px;
+    font-size: 1.2rem;
 }
 
 .social-links-large {
@@ -388,61 +416,61 @@ body {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
 .social-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background-color: var(--primary-color);
-    color: var(--white);
+    padding: 0.8rem 1.8rem;
+    color: var(--text-primary);
     text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.social-btn i {
+    font-size: 1.2rem;
 }
 
 .social-btn:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-2px);
+    color: var(--accent-color);
 }
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background: var(--bg-color);
     text-align: center;
     padding: 2rem 0;
+    margin-top: 4rem;
+    box-shadow: 0 -5px 15px rgba(163, 177, 198, 0.2);
 }
 
 footer p {
     margin-bottom: 0.5rem;
-    opacity: 0.8;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .navbar .container {
-        flex-direction: column;
-        gap: 1rem;
+    .greeting {
+        font-size: 2.5rem;
     }
 
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
+    .dynamic-text {
+        font-size: 1.5rem;
     }
 
     .section-title {
         font-size: 2rem;
+    }
+
+    .neumorphism-card-big {
+        padding: 2rem;
+        border-radius: 20px;
     }
 
     .research-grid {
@@ -452,33 +480,113 @@ footer p {
     .skills-grid {
         grid-template-columns: 1fr;
     }
+
+    .timeline {
+        padding-left: 0;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        padding-left: 60px;
+    }
+
+    .timeline-marker {
+        left: 8px;
+    }
 }
 
 @media (max-width: 480px) {
-    .hero {
-        padding: 4rem 0;
+    .landing-section {
+        padding: 2rem 0;
     }
 
     .section {
         padding: 3rem 0;
     }
 
-    .timeline {
-        padding-left: 1rem;
+    .greeting {
+        font-size: 2rem;
     }
 
-    .timeline-item {
-        padding-left: 1.5rem;
+    .dynamic-text {
+        font-size: 1.2rem;
     }
-}
 
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
+    .social-links-landing {
+        gap: 1rem;
+    }
+
+    .social-link {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .neumorphism-card-big {
+        padding: 1.5rem;
+    }
 }
 
 /* Selection Color */
 ::selection {
-    background-color: var(--secondary-color);
-    color: var(--white);
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--shadow-dark);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* AOS Animation Overrides */
+[data-aos="fade-up"] {
+    transform: translate3d(0, 40px, 0);
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.landing-content > * {
+    animation: fadeIn 1s ease-out;
+}
+
+.landing-content .greeting {
+    animation-delay: 0.2s;
+}
+
+.landing-content .dynamic-text {
+    animation-delay: 0.4s;
+}
+
+.landing-content .social-links-landing {
+    animation-delay: 0.6s;
+}
+
+.landing-content .scroll-down {
+    animation-delay: 0.8s;
 }
