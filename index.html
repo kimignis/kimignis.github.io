@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Academic Portfolio</title>
+    <title>Your Name - Graduate Student CV</title>
+    <meta name="description" content="Academic CV and Portfolio of [Your Name], Graduate Student in [Your Field]">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -16,9 +17,11 @@
     <section id="landing" class="landing-section">
         <div class="landing-content">
             <h1 class="greeting">Hi, I'm <span class="highlight-title">Your Name</span></h1>
+            <p class="subtitle">Graduate Student in [Your Field]</p>
             <div class="dynamic-text">
-                <span class="txt-rotate" data-period="2000" data-rotate='["Graduate Student", "Researcher", "Your Field", "Problem Solver"]'></span>
+                <span class="txt-rotate" data-period="2000" data-rotate='["Researcher", "Problem Solver", "Data Scientist", "Engineer"]'></span>
             </div>
+            <p class="affiliation">[Your University] · [Your Department/Lab]</p>
             <div class="social-links-landing">
                 <a href="mailto:your.email@university.edu" class="social-link" target="_blank" rel="noreferrer">
                     <i class="fas fa-envelope"></i>
@@ -45,41 +48,85 @@
                 <div class="neumorphism-card-big">
                     <h2 class="section-title">About Me</h2>
                     <div class="about-content">
-                        <p>
-                            I am a graduate student at [Your University], working in the field of [Your Research Area].
-                            My research focuses on [Brief description of your research interests].
+                        <p class="bio-intro">
+                            I am a [Master's/Ph.D.] student in [Your Field] at [Your University],
+                            advised by [Professor Name] in the [Lab/Research Group Name].
+                            My research focuses on [Brief research focus - 1-2 sentences].
                         </p>
                         <p>
-                            My work involves [Key areas of expertise or methodologies].
-                            I am passionate about [Your passion/motivation in research].
+                            I am particularly interested in [specific research areas or problems you want to solve].
+                            My work combines [methodology/approach] to address challenges in [application domain].
+                        </p>
+                        <p>
+                            Prior to graduate school, I received my [B.S./B.A.] in [Major] from [University] in [Year].
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Research Interests -->
+        <section id="interests" class="section" data-aos="fade-up">
+            <div class="container">
+                <div class="neumorphism-card-big">
+                    <h2 class="section-title">Research Interests</h2>
+                    <div class="interests-grid">
+                        <div class="interest-item neumorphism-card">
+                            <i class="fas fa-brain"></i>
+                            <h3>Interest Area 1</h3>
+                            <p>Brief description of this research interest</p>
+                        </div>
+                        <div class="interest-item neumorphism-card">
+                            <i class="fas fa-robot"></i>
+                            <h3>Interest Area 2</h3>
+                            <p>Brief description of this research interest</p>
+                        </div>
+                        <div class="interest-item neumorphism-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Interest Area 3</h3>
+                            <p>Brief description of this research interest</p>
+                        </div>
+                        <div class="interest-item neumorphism-card">
+                            <i class="fas fa-microscope"></i>
+                            <h3>Interest Area 4</h3>
+                            <p>Brief description of this research interest</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
         <section id="education" class="section" data-aos="fade-up">
             <div class="container">
                 <div class="neumorphism-card-big">
-                    <h2 class="section-title">Timeline</h2>
+                    <h2 class="section-title">Education</h2>
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
                                 <h3>Master's / Ph.D. in [Your Field]</h3>
-                                <p class="institution">Your University</p>
-                                <p class="period">202X - Present</p>
-                                <p class="description">Advisor: Prof. [Name]<br>
-                                Research Focus: [Brief description]</p>
+                                <p class="institution">[Your University], [Department]</p>
+                                <p class="period">[Start Year] - Present (Expected [Graduation Year])</p>
+                                <p class="description">
+                                    <strong>Advisor:</strong> Prof. [Advisor Name]<br>
+                                    <strong>Thesis:</strong> [Thesis Title or Topic]<br>
+                                    <strong>GPA:</strong> X.XX/4.0 (if applicable)<br>
+                                    <strong>Relevant Coursework:</strong> [Course 1], [Course 2], [Course 3]
+                                </p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3>Bachelor's in [Your Field]</h3>
-                                <p class="institution">Your University</p>
-                                <p class="period">202X - 202X</p>
-                                <p class="description">GPA: X.XX/4.0</p>
+                                <h3>Bachelor of [Science/Arts] in [Major]</h3>
+                                <p class="institution">[Your University], [Department]</p>
+                                <p class="period">[Start Year] - [Graduation Year]</p>
+                                <p class="description">
+                                    <strong>GPA:</strong> X.XX/4.0<br>
+                                    <strong>Honors:</strong> [Summa Cum Laude / Magna Cum Laude / Dean's List / etc.]<br>
+                                    <strong>Minor:</strong> [Minor if applicable]
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -87,37 +134,55 @@
             </div>
         </section>
 
+        <!-- Research Experience -->
         <section id="research" class="section" data-aos="fade-up">
             <div class="container">
                 <div class="neumorphism-card-big">
-                    <h2 class="section-title">Research Projects</h2>
-                    <div class="research-grid">
-                        <div class="research-card neumorphism-card">
-                            <h3>Research Project 1</h3>
-                            <p class="research-period">202X - Present</p>
-                            <p>Brief description of your research project, objectives, and key findings.</p>
-                            <div class="research-tags">
-                                <span class="tag">Tag1</span>
-                                <span class="tag">Tag2</span>
-                                <span class="tag">Tag3</span>
+                    <h2 class="section-title">Research Experience</h2>
+                    <div class="experience-list">
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div>
+                                    <h3>Graduate Research Assistant</h3>
+                                    <p class="institution">[Lab/Research Group Name], [University]</p>
+                                </div>
+                                <p class="period">[Start Date] - Present</p>
+                            </div>
+                            <div class="experience-content">
+                                <p><strong>Project:</strong> [Project Title]</p>
+                                <p><strong>Advisor:</strong> Prof. [Name]</p>
+                                <ul class="experience-details">
+                                    <li>Key responsibility or achievement 1</li>
+                                    <li>Key responsibility or achievement 2</li>
+                                    <li>Key responsibility or achievement 3</li>
+                                </ul>
+                                <div class="research-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Machine Learning</span>
+                                    <span class="tag">Data Analysis</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="research-card neumorphism-card">
-                            <h3>Research Project 2</h3>
-                            <p class="research-period">202X - 202X</p>
-                            <p>Brief description of your research project, objectives, and key findings.</p>
-                            <div class="research-tags">
-                                <span class="tag">Tag1</span>
-                                <span class="tag">Tag2</span>
+
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div>
+                                    <h3>Research Intern / Undergraduate Researcher</h3>
+                                    <p class="institution">[Company/Lab Name]</p>
+                                </div>
+                                <p class="period">[Start Date] - [End Date]</p>
                             </div>
-                        </div>
-                        <div class="research-card neumorphism-card">
-                            <h3>Research Project 3</h3>
-                            <p class="research-period">202X - 202X</p>
-                            <p>Brief description of your research project, objectives, and key findings.</p>
-                            <div class="research-tags">
-                                <span class="tag">Tag1</span>
-                                <span class="tag">Tag2</span>
+                            <div class="experience-content">
+                                <p><strong>Project:</strong> [Project Title]</p>
+                                <ul class="experience-details">
+                                    <li>Key contribution or achievement 1</li>
+                                    <li>Key contribution or achievement 2</li>
+                                    <li>Key contribution or achievement 3</li>
+                                </ul>
+                                <div class="research-tags">
+                                    <span class="tag">Methodology</span>
+                                    <span class="tag">Tool/Framework</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -125,28 +190,90 @@
             </div>
         </section>
 
+        <!-- Publications -->
         <section id="publications" class="section" data-aos="fade-up">
             <div class="container">
                 <div class="neumorphism-card-big">
                     <h2 class="section-title">Publications</h2>
                     <div class="publications-list">
-                        <div class="publication-item">
-                            <h3>Title of Your Paper</h3>
-                            <p class="authors"><strong>Your Name</strong>, Co-author 1, Co-author 2</p>
-                            <p class="venue"><em>Conference/Journal Name</em>, Year</p>
-                            <div class="publication-links">
-                                <a href="#" class="btn-link neumorphism-btn">Paper</a>
-                                <a href="#" class="btn-link neumorphism-btn">Code</a>
-                                <a href="#" class="btn-link neumorphism-btn">Slides</a>
+                        <!-- Journal Papers -->
+                        <div class="publication-category">
+                            <h3 class="category-title">Journal Papers</h3>
+                            <div class="publication-item">
+                                <h4>Full Title of Your Journal Paper</h4>
+                                <p class="authors"><strong>Your Name</strong>, Co-author 1, Co-author 2</p>
+                                <p class="venue"><em>Journal Name</em>, Vol. X, No. Y, pp. ZZ-ZZ, Year</p>
+                                <p class="status-badge accepted">Published</p>
+                                <div class="publication-links">
+                                    <a href="#" class="btn-link neumorphism-btn"><i class="fas fa-file-pdf"></i> PDF</a>
+                                    <a href="#" class="btn-link neumorphism-btn"><i class="fas fa-code"></i> Code</a>
+                                    <a href="#" class="btn-link neumorphism-btn"><i class="fas fa-link"></i> DOI</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="publication-item">
-                            <h3>Another Publication Title</h3>
-                            <p class="authors">Co-author 1, <strong>Your Name</strong>, Co-author 2</p>
-                            <p class="venue"><em>Conference/Journal Name</em>, Year</p>
-                            <div class="publication-links">
-                                <a href="#" class="btn-link neumorphism-btn">Paper</a>
-                                <a href="#" class="btn-link neumorphism-btn">Poster</a>
+
+                        <!-- Conference Papers -->
+                        <div class="publication-category">
+                            <h3 class="category-title">Conference Papers</h3>
+                            <div class="publication-item">
+                                <h4>Title of Your Conference Paper</h4>
+                                <p class="authors"><strong>Your Name</strong>, Co-author 1, Co-author 2</p>
+                                <p class="venue"><em>Conference Name (CONF'24)</em>, Location, Year</p>
+                                <p class="status-badge published">Published</p>
+                                <div class="publication-links">
+                                    <a href="#" class="btn-link neumorphism-btn"><i class="fas fa-file-pdf"></i> PDF</a>
+                                    <a href="#" class="btn-link neumorphism-btn"><i class="fas fa-presentation"></i> Slides</a>
+                                    <a href="#" class="btn-link neumorphism-btn"><i class="fas fa-video"></i> Video</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Preprints / Under Review -->
+                        <div class="publication-category">
+                            <h3 class="category-title">Preprints & Manuscripts</h3>
+                            <div class="publication-item">
+                                <h4>Title of Paper Under Review</h4>
+                                <p class="authors">Co-author 1, <strong>Your Name</strong>, Co-author 2</p>
+                                <p class="venue"><em>Submitted to [Journal/Conference Name]</em>, Year</p>
+                                <p class="status-badge under-review">Under Review</p>
+                                <div class="publication-links">
+                                    <a href="#" class="btn-link neumorphism-btn"><i class="fab fa-arxiv"></i> arXiv</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Honors -->
+        <section id="awards" class="section" data-aos="fade-up">
+            <div class="container">
+                <div class="neumorphism-card-big">
+                    <h2 class="section-title">Awards & Honors</h2>
+                    <div class="awards-list">
+                        <div class="award-item">
+                            <div class="award-icon"><i class="fas fa-trophy"></i></div>
+                            <div class="award-content">
+                                <h3>Award/Scholarship Name</h3>
+                                <p class="award-org">Awarding Organization</p>
+                                <p class="period">Year</p>
+                            </div>
+                        </div>
+                        <div class="award-item">
+                            <div class="award-icon"><i class="fas fa-medal"></i></div>
+                            <div class="award-content">
+                                <h3>Honor/Fellowship Name</h3>
+                                <p class="award-org">Awarding Organization</p>
+                                <p class="period">Year</p>
+                            </div>
+                        </div>
+                        <div class="award-item">
+                            <div class="award-icon"><i class="fas fa-award"></i></div>
+                            <div class="award-content">
+                                <h3>Competition/Contest Achievement</h3>
+                                <p class="award-org">Event Name</p>
+                                <p class="period">Year</p>
                             </div>
                         </div>
                     </div>
