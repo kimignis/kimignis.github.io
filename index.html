@@ -13,8 +13,37 @@
     <!-- Particles Background -->
     <div id="particles-js"></div>
 
-    <!-- Landing Section -->
-    <section id="landing" class="landing-section">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Kim Minsik</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#research" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#publications" class="nav-link">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#cv" class="nav-link">CV</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home / Landing Section -->
+    <section id="home" class="landing-section">
         <div class="landing-content">
             <h1 class="greeting">Hi, I'm <span class="highlight-title">Kim Minsik</span></h1>
             <p class="subtitle">Graduate Student in [Your Field]</p>
@@ -37,36 +66,15 @@
                 </a>
             </div>
             <div class="scroll-down">
-                <a href="#about"><i class="fas fa-chevron-down"></i></a>
+                <a href="#research"><i class="fas fa-chevron-down"></i></a>
             </div>
         </div>
     </section>
 
     <main>
-        <section id="about" class="section" data-aos="fade-up">
-            <div class="container">
-                <div class="neumorphism-card-big">
-                    <h2 class="section-title">About Me</h2>
-                    <div class="about-content">
-                        <p class="bio-intro">
-                            I am a [Master's/Ph.D.] student in [Your Field] at [Your University],
-                            advised by [Professor Name] in the [Lab/Research Group Name].
-                            My research focuses on [Brief research focus - 1-2 sentences].
-                        </p>
-                        <p>
-                            I am particularly interested in [specific research areas or problems you want to solve].
-                            My work combines [methodology/approach] to address challenges in [application domain].
-                        </p>
-                        <p>
-                            Prior to graduate school, I received my [B.S./B.A.] in [Major] from [University] in [Year].
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Research Interests -->
-        <section id="interests" class="section" data-aos="fade-up">
+        <!-- Research Section -->
+        <section id="research" class="section" data-aos="fade-up">
+            <!-- Research Interests -->
             <div class="container">
                 <div class="neumorphism-card-big">
                     <h2 class="section-title">Research Interests</h2>
@@ -94,49 +102,9 @@
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Education -->
-        <section id="education" class="section" data-aos="fade-up">
-            <div class="container">
-                <div class="neumorphism-card-big">
-                    <h2 class="section-title">Education</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h3>Master's / Ph.D. in [Your Field]</h3>
-                                <p class="institution">[Your University], [Department]</p>
-                                <p class="period">[Start Year] - Present (Expected [Graduation Year])</p>
-                                <p class="description">
-                                    <strong>Advisor:</strong> Prof. [Advisor Name]<br>
-                                    <strong>Thesis:</strong> [Thesis Title or Topic]<br>
-                                    <strong>GPA:</strong> X.XX/4.0 (if applicable)<br>
-                                    <strong>Relevant Coursework:</strong> [Course 1], [Course 2], [Course 3]
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h3>Bachelor of [Science/Arts] in [Major]</h3>
-                                <p class="institution">[Your University], [Department]</p>
-                                <p class="period">[Start Year] - [Graduation Year]</p>
-                                <p class="description">
-                                    <strong>GPA:</strong> X.XX/4.0<br>
-                                    <strong>Honors:</strong> [Summa Cum Laude / Magna Cum Laude / Dean's List / etc.]<br>
-                                    <strong>Minor:</strong> [Minor if applicable]
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Research Experience -->
-        <section id="research" class="section" data-aos="fade-up">
-            <div class="container">
+            <!-- Research Experience -->
+            <div class="container" style="margin-top: 3rem;">
                 <div class="neumorphism-card-big">
                     <h2 class="section-title">Research Experience</h2>
                     <div class="experience-list">
@@ -246,43 +214,46 @@
             </div>
         </section>
 
-        <!-- Awards & Honors -->
-        <section id="awards" class="section" data-aos="fade-up">
+        <!-- CV Section (Education, Skills, Awards) -->
+        <section id="cv" class="section" data-aos="fade-up">
+            <!-- Education -->
             <div class="container">
                 <div class="neumorphism-card-big">
-                    <h2 class="section-title">Awards & Honors</h2>
-                    <div class="awards-list">
-                        <div class="award-item">
-                            <div class="award-icon"><i class="fas fa-trophy"></i></div>
-                            <div class="award-content">
-                                <h3>Award/Scholarship Name</h3>
-                                <p class="award-org">Awarding Organization</p>
-                                <p class="period">Year</p>
+                    <h2 class="section-title">Education</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Master's / Ph.D. in [Your Field]</h3>
+                                <p class="institution">[Your University], [Department]</p>
+                                <p class="period">[Start Year] - Present (Expected [Graduation Year])</p>
+                                <p class="description">
+                                    <strong>Advisor:</strong> Prof. [Advisor Name]<br>
+                                    <strong>Thesis:</strong> [Thesis Title or Topic]<br>
+                                    <strong>GPA:</strong> X.XX/4.0 (if applicable)<br>
+                                    <strong>Relevant Coursework:</strong> [Course 1], [Course 2], [Course 3]
+                                </p>
                             </div>
                         </div>
-                        <div class="award-item">
-                            <div class="award-icon"><i class="fas fa-medal"></i></div>
-                            <div class="award-content">
-                                <h3>Honor/Fellowship Name</h3>
-                                <p class="award-org">Awarding Organization</p>
-                                <p class="period">Year</p>
-                            </div>
-                        </div>
-                        <div class="award-item">
-                            <div class="award-icon"><i class="fas fa-award"></i></div>
-                            <div class="award-content">
-                                <h3>Competition/Contest Achievement</h3>
-                                <p class="award-org">Event Name</p>
-                                <p class="period">Year</p>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Bachelor of [Science/Arts] in [Major]</h3>
+                                <p class="institution">[Your University], [Department]</p>
+                                <p class="period">[Start Year] - [Graduation Year]</p>
+                                <p class="description">
+                                    <strong>GPA:</strong> X.XX/4.0<br>
+                                    <strong>Honors:</strong> [Summa Cum Laude / Magna Cum Laude / Dean's List / etc.]<br>
+                                    <strong>Minor:</strong> [Minor if applicable]
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section id="skills" class="section" data-aos="fade-up">
-            <div class="container">
+            <!-- Skills -->
+            <div class="container" style="margin-top: 3rem;">
                 <div class="neumorphism-card-big">
                     <h2 class="section-title">Skills</h2>
                     <div class="skills-grid">
@@ -323,8 +294,42 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Awards & Honors -->
+            <div class="container" style="margin-top: 3rem;">
+                <div class="neumorphism-card-big">
+                    <h2 class="section-title">Awards & Honors</h2>
+                    <div class="awards-list">
+                        <div class="award-item">
+                            <div class="award-icon"><i class="fas fa-trophy"></i></div>
+                            <div class="award-content">
+                                <h3>Award/Scholarship Name</h3>
+                                <p class="award-org">Awarding Organization</p>
+                                <p class="period">Year</p>
+                            </div>
+                        </div>
+                        <div class="award-item">
+                            <div class="award-icon"><i class="fas fa-medal"></i></div>
+                            <div class="award-content">
+                                <h3>Honor/Fellowship Name</h3>
+                                <p class="award-org">Awarding Organization</p>
+                                <p class="period">Year</p>
+                            </div>
+                        </div>
+                        <div class="award-item">
+                            <div class="award-icon"><i class="fas fa-award"></i></div>
+                            <div class="award-content">
+                                <h3>Competition/Contest Achievement</h3>
+                                <p class="award-org">Event Name</p>
+                                <p class="period">Year</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <!-- Contact -->
         <section id="contact" class="section" data-aos="fade-up">
             <div class="container">
                 <div class="neumorphism-card-big">
@@ -341,7 +346,7 @@
                         <a href="#" target="_blank" class="social-btn neumorphism-btn">
                             <i class="fas fa-graduation-cap"></i> Google Scholar
                         </a>
-                        <a href="#" target="_blank" class="social-btn neumorphism-btn">
+                        <a href="https://github.com/kimignis" target="_blank" class="social-btn neumorphism-btn">
                             <i class="fab fa-github"></i> GitHub
                         </a>
                         <a href="#" target="_blank" class="social-btn neumorphism-btn">
