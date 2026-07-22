@@ -50,6 +50,18 @@ test("shows verified LinkedIn profile and credentials", async ({ page }) => {
     await expect(page.getByText("Google for Developers Machine Learning Bootcamp", { exact: true })).toHaveCount(1);
 });
 
+test("uses a researcher-oriented structure and four publication groups", async ({ page }) => {
+    const desktopNav = page.locator("[data-nav-links] .nav-link");
+    await expect(desktopNav).toHaveCount(4);
+    await expect(page.locator("[data-nav-target='research']")).toHaveCount(0);
+    await expect(page.locator("[data-publication-category]")).toHaveCount(4);
+    await expect(page.getByRole("heading", { name: "국내 학술대회" })).toHaveCount(1);
+    await expect(page.getByRole("heading", { name: "국내 저널" })).toHaveCount(1);
+    await expect(page.getByRole("heading", { name: "해외 학술대회" })).toHaveCount(1);
+    await expect(page.getByRole("heading", { name: "해외 저널" })).toHaveCount(1);
+    await expect(page.locator(".profile-research [data-focus-list]")).toHaveCount(1);
+});
+
 test("@visual hero remains visually stable", async ({ page }) => {
     await expect(page.locator("#home")).toHaveScreenshot("portfolio-hero.png", {
         animations: "disabled"

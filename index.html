@@ -64,7 +64,7 @@
     <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600&display=swap">
-    <link rel="stylesheet" href="style.css?v=20260722-linkedin">
+    <link rel="stylesheet" href="style.css?v=20260722-structure">
 </head>
 <body>
     <a class="skip-link" href="#main-content" data-i18n="skipLink">본문으로 바로가기</a>
@@ -178,28 +178,42 @@
             </div>
             <div class="profile-content">
                 <p class="section-lede" data-profile-bio></p>
-                <div class="education-list" data-education-list></div>
+                <section class="profile-block" aria-labelledby="education-title">
+                    <header class="profile-block-heading">
+                        <h3 id="education-title" data-i18n="educationTitle">학력과 경험</h3>
+                        <span>01</span>
+                    </header>
+                    <div class="education-list" data-education-list></div>
+                </section>
                 <div class="credential-list" data-credential-list></div>
-                <div class="skill-columns" data-skill-list></div>
+                <section class="profile-research" aria-labelledby="profile-research-title">
+                    <header class="profile-block-heading">
+                        <h3 id="profile-research-title" data-i18n="profileResearchTitle">관심 연구 영역</h3>
+                        <span>03</span>
+                    </header>
+                    <p class="profile-research-lede" data-i18n="focusLede">모델의 성능과 사람이 이해할 수 있는 근거를 함께 설계합니다.</p>
+                    <div class="focus-list" data-focus-list></div>
+                    <div class="skill-columns" data-skill-list></div>
+                </section>
             </div>
         </section>
 
-        <section class="section focus-section" id="research" aria-labelledby="focus-title">
+        <section class="section publication-section" id="publications" aria-labelledby="publication-title" data-publication-section hidden>
             <div class="section-index">02</div>
             <div class="section-intro">
-                <p class="section-label" data-i18n="focusLabel">RESEARCH</p>
-                <h2 id="focus-title" data-i18n="focusTitle">세 가지 연구 축</h2>
+                <p class="section-label" data-i18n="publicationLabel">PUBLICATION</p>
+                <h2 id="publication-title" data-i18n="publicationTitle">논문과 발표</h2>
             </div>
             <div class="section-body">
-                <p class="section-lede" data-i18n="focusLede">모델의 성능과 사람이 이해할 수 있는 근거를 함께 설계합니다.</p>
-                <div class="focus-list" data-focus-list></div>
+                <p class="section-lede" data-i18n="publicationLede">국내외 학술대회와 저널을 구분해 연구 기록을 정리합니다.</p>
+                <div class="publication-list" data-publication-list></div>
             </div>
         </section>
 
         <section class="section work-section" id="projects" aria-labelledby="work-title">
             <div class="section-index">03</div>
             <div class="section-intro">
-                <p class="section-label" data-i18n="workLabel">PROJECTS</p>
+                <p class="section-label" data-i18n="workLabel">RESEARCH PROJECT</p>
                 <h2 id="work-title" data-i18n="workTitle">연구에서<br>현장까지</h2>
             </div>
             <div class="section-body">
@@ -208,19 +222,8 @@
             </div>
         </section>
 
-        <section class="section publication-section" id="publications" aria-labelledby="publication-title" data-publication-section hidden>
-            <div class="section-index">04</div>
-            <div class="section-intro">
-                <p class="section-label" data-i18n="publicationLabel">PUBLICATIONS</p>
-                <h2 id="publication-title" data-i18n="publicationTitle">논문과 발표</h2>
-            </div>
-            <div class="section-body">
-                <p class="section-lede" data-i18n="publicationLede">출판된 연구와 현재 이어가고 있는 작업입니다.</p>
-                <div class="publication-list" data-publication-list></div>
-            </div>
-        </section>
-
         <section class="contact-section" id="contact" aria-labelledby="contact-title">
+            <span class="contact-index">04</span>
             <p class="section-label" data-i18n="contactLabel">CONTACT / COLLABORATION</p>
             <h2 id="contact-title" data-contact-heading></h2>
             <p data-contact-body></p>
@@ -236,9 +239,9 @@
 
     <noscript><div class="noscript-message">이 사이트의 콘텐츠를 보려면 JavaScript를 활성화해주세요.</div></noscript>
 
-    <script defer src="content.js?v=20260722-linkedin"></script>
+    <script defer src="content.js?v=20260722-structure"></script>
     <script defer src="vendor/lucide.min.js?v=0.468.0"></script>
     <script defer src="vendor/lottie.min.js?v=5.12.2"></script>
-    <script defer src="script.js?v=20260722-linkedin"></script>
+    <script defer src="script.js?v=20260722-structure"></script>
 </body>
 </html>

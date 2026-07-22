@@ -17,6 +17,9 @@ assert.match(content.site.lab, /^http:\/\/iai\.khu\.ac\.kr\//, "연구실 주소
 assert(content.focus.length >= 3, "연구 접근 항목은 3개 이상이어야 합니다.");
 assert(content.work.length >= 1, "대표 작업은 1개 이상이어야 합니다.");
 assert(content.publications.length >= 1, "논문 또는 발표는 1개 이상이어야 합니다.");
+assert.equal(content.publicationCategories.length, 4, "Publication 분류는 4개여야 합니다.");
+const publicationCategoryIds = new Set(content.publicationCategories.map((item) => item.id));
+content.publications.forEach((item) => assert(publicationCategoryIds.has(item.category), "모든 Publication에 유효한 분류가 필요합니다."));
 assert(content.education.length >= 3, "학력 항목은 3개 이상이어야 합니다.");
 assert(content.credentials.length >= 2, "자격증 또는 수료증은 2개 이상이어야 합니다.");
 assert(content.contact.links.some((item) => item.url === content.site.linkedin), "Contact에 LinkedIn 링크가 필요합니다.");
@@ -31,6 +34,7 @@ const localizedFields = [
     ...content.focus.flatMap((item) => [item.title, item.description]),
     ...content.work.flatMap((item) => [item.title, item.summary]),
     ...content.publications.flatMap((item) => [item.title, item.venue]),
+    ...content.publicationCategories.map((item) => item.label),
     ...content.education.flatMap((item) => [item.degree, item.school, item.detail]),
     ...content.credentials.flatMap((item) => [item.title, item.issuer]),
     ...content.researchLoop.flatMap((item) => [item.title, item.description]),

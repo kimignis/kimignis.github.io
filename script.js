@@ -26,18 +26,19 @@
             applications: "RESEARCH APPLICATIONS",
             profileLabel: "PROFILE",
             profileTitle: "산업의 문제를<br>설명 가능한 지능으로.",
-            focusLabel: "RESEARCH",
-            focusTitle: "세 가지 연구 축",
+            educationTitle: "학력과 경험",
+            profileResearchTitle: "관심 연구 영역",
             focusLede: "모델의 성능과 사람이 이해할 수 있는 근거를 함께 설계합니다.",
-            workLabel: "PROJECTS",
+            workLabel: "RESEARCH PROJECT",
             workTitle: "연구에서<br>현장까지",
             workLede: "제조 현장의 의사결정과 에너지 예측을 실제 연구 결과로 연결합니다.",
-            publicationLabel: "PUBLICATIONS",
+            publicationLabel: "PUBLICATION",
             publicationTitle: "논문과 발표",
-            publicationLede: "출판된 연구와 현재 이어가고 있는 작업입니다.",
+            publicationLede: "국내외 학술대회와 저널을 구분해 연구 기록을 정리합니다.",
+            publicationEmpty: "내용 정리 후 추가할 예정입니다.",
             contactLabel: "CONTACT / COLLABORATION",
             backToTop: "맨 위로",
-            nav: ["Profile", "Research", "Projects", "Publications", "Contact"]
+            nav: ["Profile", "Publications", "Research Projects", "Contact"]
         },
         en: {
             skipLink: "Skip to main content",
@@ -53,27 +54,27 @@
             applications: "RESEARCH APPLICATIONS",
             profileLabel: "PROFILE",
             profileTitle: "Turning industrial problems<br>into explainable intelligence.",
-            focusLabel: "RESEARCH",
-            focusTitle: "Three research axes",
+            educationTitle: "Education & Experience",
+            profileResearchTitle: "Research Interests",
             focusLede: "I design model performance together with evidence people can understand.",
-            workLabel: "PROJECTS",
+            workLabel: "RESEARCH PROJECT",
             workTitle: "From research<br>to the field",
             workLede: "Connecting manufacturing decisions and energy forecasting to tangible research outcomes.",
-            publicationLabel: "PUBLICATIONS",
+            publicationLabel: "PUBLICATION",
             publicationTitle: "Papers and talks",
-            publicationLede: "Published work and research currently in progress.",
+            publicationLede: "Research records organized by domestic and international conferences and journals.",
+            publicationEmpty: "Entries will be added after the list is finalized.",
             contactLabel: "CONTACT / COLLABORATION",
             backToTop: "Back to top",
-            nav: ["Profile", "Research", "Projects", "Publications", "Contact"]
+            nav: ["Profile", "Publications", "Research Projects", "Contact"]
         }
     };
 
     const navItems = [
         { id: "profile", index: 0 },
-        { id: "research", index: 1 },
+        { id: "publications", index: 1 },
         { id: "projects", index: 2 },
-        { id: "publications", index: 3 },
-        { id: "contact", index: 4 }
+        { id: "contact", index: 3 }
     ];
 
     function localized(value) {
@@ -201,18 +202,35 @@
 
     function renderPublications() {
         const section = document.querySelector("[data-publication-section]");
-        section.hidden = content.publications.length === 0;
-        document.querySelector("[data-publication-list]").innerHTML = content.publications.map((item, index) => `
-            <article class="publication-item" data-reveal>
-                <span class="publication-index">${String(index + 1).padStart(2, "0")}</span>
-                <div>
-                    <h3>${localized(item.title)}</h3>
-                    <p>${item.authors}</p>
-                </div>
-                <p class="publication-venue">${localized(item.venue)}</p>
-                ${item.url ? `<a class="item-link" href="${item.url}" target="_blank" rel="noopener noreferrer" aria-label="${localized(item.title)}"><i data-lucide="arrow-up-right"></i></a>` : ""}
-            </article>
-        `).join("");
+        section.hidden = content.publicationCategories.length === 0;
+        document.querySelector("[data-publication-list]").innerHTML = content.publicationCategories.map((category, categoryIndex) => {
+            const items = content.publications.filter((item) => item.category === category.id);
+            const itemMarkup = items.length ? items.map((item) => {
+                const publicationIndex = content.publications.indexOf(item);
+                return `
+                    <article class="publication-item" data-reveal>
+                        <span class="publication-index">${String(publicationIndex + 1).padStart(2, "0")}</span>
+                        <div>
+                            <h3>${localized(item.title)}</h3>
+                            <p>${item.authors}</p>
+                        </div>
+                        <p class="publication-venue">${localized(item.venue)}</p>
+                        ${item.url ? `<a class="item-link" href="${item.url}" target="_blank" rel="noopener noreferrer" aria-label="${localized(item.title)}"><i data-lucide="arrow-up-right"></i></a>` : ""}
+                    </article>
+                `;
+            }).join("") : `<p class="publication-empty">${copy[state.language].publicationEmpty}</p>`;
+
+            return `
+                <section class="publication-group" data-publication-category="${category.id}">
+                    <header class="publication-group-heading">
+                        <span>${String(categoryIndex + 1).padStart(2, "0")}</span>
+                        <h3>${localized(category.label)}</h3>
+                        <span>${String(items.length).padStart(2, "0")}</span>
+                    </header>
+                    <div class="publication-group-list">${itemMarkup}</div>
+                </section>
+            `;
+        }).join("");
     }
 
     function renderContact() {
