@@ -449,7 +449,7 @@
             renderer: "svg",
             loop: true,
             autoplay: !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-            path: "public/projects/portfolio/scene-1/lottie.json",
+            path: "public/projects/portfolio/scene-1/lottie.json?v=20260722-ai-loop",
             rendererSettings: { progressiveLoad: true, preserveAspectRatio: "xMidYMid meet" }
         });
         heroAnimation = animation;
