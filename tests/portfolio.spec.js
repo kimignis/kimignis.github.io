@@ -62,6 +62,17 @@ test("uses a researcher-oriented structure and four publication groups", async (
     await expect(page.locator(".profile-research [data-focus-list]")).toHaveCount(1);
 });
 
+test("renders the publication bibliography, awards, and manuscript states", async ({ page }) => {
+    await expect(page.locator("[data-publication-category='domestic-conference'] .publication-item")).toHaveCount(7);
+    await expect(page.locator("[data-publication-category='domestic-journal'] .publication-item")).toHaveCount(0);
+    await expect(page.locator("[data-publication-category='international-conference'] .publication-item")).toHaveCount(6);
+    await expect(page.locator("[data-publication-category='international-journal'] .publication-item")).toHaveCount(3);
+    await expect(page.locator(".publication-award")).toHaveCount(2);
+    await expect(page.locator(".publication-status")).toHaveCount(6);
+    await expect(page.locator(".publication-self")).toHaveCount(16);
+    await expect(page.getByRole("heading", { name: "생성형 AI를 활용한 대화형 공정 모니터링 지원 시스템 개발" })).toHaveCount(1);
+});
+
 test("presents twelve consolidated research projects", async ({ page }) => {
     await expect(page.locator("[data-work-list] .work-item")).toHaveCount(12);
     await expect(page.getByRole("heading", { name: "디지털 트윈 환경을 위한 Bottleneck 공정 목표 WIP 산출 및 관리방안 연구" })).toHaveCount(1);

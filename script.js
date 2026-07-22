@@ -35,7 +35,7 @@
             publicationLabel: "PUBLICATION",
             publicationTitle: "논문과 발표",
             publicationLede: "국내외 학술대회와 저널을 구분해 연구 기록을 정리합니다.",
-            publicationEmpty: "내용 정리 후 추가할 예정입니다.",
+            publicationEmpty: "현재 등록된 항목이 없습니다.",
             contactLabel: "CONTACT / COLLABORATION",
             backToTop: "맨 위로",
             nav: ["Profile", "Publications", "Research Projects", "Contact"]
@@ -63,7 +63,7 @@
             publicationLabel: "PUBLICATION",
             publicationTitle: "Papers and talks",
             publicationLede: "Research records organized by domestic and international conferences and journals.",
-            publicationEmpty: "Entries will be added after the list is finalized.",
+            publicationEmpty: "No entries at this time.",
             contactLabel: "CONTACT / COLLABORATION",
             backToTop: "Back to top",
             nav: ["Profile", "Publications", "Research Projects", "Contact"]
@@ -81,6 +81,17 @@
         if (value == null) return "";
         if (typeof value === "string") return value;
         return value[state.language] || value.ko || value.en || "";
+    }
+
+    function formatAuthors(authors) {
+        const escaped = authors.replace(/[&<>"']/g, (character) => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            "\"": "&quot;",
+            "'": "&#039;"
+        })[character]);
+        return escaped.replace(/김민식|Minsik Kim/g, (name) => `<strong class="publication-self">${name}</strong>`);
     }
 
     function textAll(selector, value) {
@@ -209,6 +220,12 @@
 
     function renderPublications() {
         const section = document.querySelector("[data-publication-section]");
+        const statusIcons = {
+            scheduled: "calendar-clock",
+            preparation: "pencil-line",
+            submitted: "send",
+            review: "scan-search"
+        };
         section.hidden = content.publicationCategories.length === 0;
         document.querySelector("[data-publication-list]").innerHTML = content.publicationCategories.map((category, categoryIndex) => {
             const items = content.publications.filter((item) => item.category === category.id);
@@ -219,7 +236,13 @@
                         <span class="publication-index">${String(publicationIndex + 1).padStart(2, "0")}</span>
                         <div>
                             <h3>${localized(item.title)}</h3>
-                            <p>${item.authors}</p>
+                            <p class="publication-authors">${formatAuthors(item.authors)}</p>
+                            ${(item.award || item.status) ? `
+                                <div class="publication-notes">
+                                    ${item.award ? `<span class="publication-note publication-award"><i data-lucide="award"></i>${localized(item.award)}</span>` : ""}
+                                    ${item.status ? `<span class="publication-note publication-status"><i data-lucide="${statusIcons[item.status.kind] || "file-clock"}"></i>${localized(item.status.label)}</span>` : ""}
+                                </div>
+                            ` : ""}
                         </div>
                         <p class="publication-venue">${localized(item.venue)}</p>
                         ${item.url ? `<a class="item-link" href="${item.url}" target="_blank" rel="noopener noreferrer" aria-label="${localized(item.title)}"><i data-lucide="arrow-up-right"></i></a>` : ""}

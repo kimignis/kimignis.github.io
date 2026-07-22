@@ -22,10 +22,24 @@ content.work.forEach((item) => {
     assert.match(item.year, /^\d{4}\.\d{2}—\d{4}\.\d{2}$/, "과제 참여기간은 YYYY.MM—YYYY.MM 형식이어야 합니다.");
     assert(item.tags.length >= 3, "Research Project마다 연구 키워드가 3개 이상 필요합니다.");
 });
-assert(content.publications.length >= 1, "논문 또는 발표는 1개 이상이어야 합니다.");
+assert.equal(content.publications.length, 16, "정리된 논문 및 학술대회 발표는 16개여야 합니다.");
 assert.equal(content.publicationCategories.length, 4, "Publication 분류는 4개여야 합니다.");
 const publicationCategoryIds = new Set(content.publicationCategories.map((item) => item.id));
 content.publications.forEach((item) => assert(publicationCategoryIds.has(item.category), "모든 Publication에 유효한 분류가 필요합니다."));
+const expectedPublicationCounts = {
+    "domestic-conference": 7,
+    "domestic-journal": 0,
+    "international-conference": 6,
+    "international-journal": 3
+};
+Object.entries(expectedPublicationCounts).forEach(([category, count]) => {
+    assert.equal(content.publications.filter((item) => item.category === category).length, count, `${category} 항목 수를 확인하세요.`);
+});
+assert.equal(content.publications.filter((item) => item.award).length, 2, "우수논문상 수상 발표는 2개여야 합니다.");
+const publicationStatusKinds = new Set(["scheduled", "preparation", "submitted", "review"]);
+content.publications.filter((item) => item.status).forEach((item) => {
+    assert(publicationStatusKinds.has(item.status.kind), "Publication 상태 종류를 확인하세요.");
+});
 assert(content.education.length >= 3, "학력 항목은 3개 이상이어야 합니다.");
 assert(content.credentials.length >= 2, "자격증 또는 수료증은 2개 이상이어야 합니다.");
 assert(content.contact.links.some((item) => item.url === content.site.linkedin), "Contact에 LinkedIn 링크가 필요합니다.");
@@ -39,7 +53,7 @@ const localizedFields = [
     content.profile.name, content.profile.headline, content.profile.intro,
     ...content.focus.flatMap((item) => [item.title, item.description]),
     ...content.work.flatMap((item) => [item.type, item.title, item.summary]),
-    ...content.publications.flatMap((item) => [item.title, item.venue]),
+    ...content.publications.flatMap((item) => [item.title, item.venue, ...(item.award ? [item.award] : []), ...(item.status ? [item.status.label] : [])]),
     ...content.publicationCategories.map((item) => item.label),
     ...content.education.flatMap((item) => [item.degree, item.school, item.detail]),
     ...content.credentials.flatMap((item) => [item.title, item.issuer]),

@@ -708,6 +708,20 @@ main, .site-footer { margin-left: var(--rail-width); }
 .publication-item h3 { font-size: 17px; }
 .publication-index { font-family: var(--display); font-size: 10px; color: var(--red); }
 .publication-venue { font-size: 11px !important; }
+.publication-self { font-weight: 750; color: var(--ink); }
+.publication-notes { display: flex; flex-wrap: wrap; gap: 9px 16px; margin-top: 14px; }
+.publication-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--display);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+.publication-note svg { width: 13px; height: 13px; stroke-width: 1.7; }
+.publication-award { color: var(--red); }
+.publication-status { color: var(--navy); }
 
 .publication-group + .publication-group { margin-top: 64px; }
 .publication-group-heading {
