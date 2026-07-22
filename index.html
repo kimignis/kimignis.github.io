@@ -91,6 +91,7 @@
         <nav class="mobile-menu" id="mobile-menu" aria-label="모바일 메뉴" data-mobile-menu hidden>
             <div data-mobile-nav-links></div>
         </nav>
+        <span class="scroll-progress" data-scroll-progress aria-hidden="true"></span>
     </header>
 
     <main id="main-content">
@@ -120,7 +121,7 @@
             </div>
 
             <aside class="hero-profile-panel" aria-label="프로필 요약">
-                <div class="profile-visual" aria-hidden="true">
+                <div class="profile-visual" data-profile-visual aria-hidden="true">
                     <div class="hero-motion" id="hero-motion">
                         <div class="motion-fallback">
                             <span class="fallback-orbit fallback-orbit-a"></span>
@@ -128,8 +129,9 @@
                             <span class="fallback-core"></span>
                         </div>
                     </div>
+                    <span class="visual-probe"></span>
                     <span class="visual-monogram">MK</span>
-                    <span class="visual-coordinate">37.24° N · 127.08° E</span>
+                    <span class="visual-coordinate">XAI · LLM · MFG</span>
                 </div>
 
                 <dl class="hero-facts">
@@ -145,6 +147,32 @@
 
                 <p class="profile-note" data-profile-statement></p>
             </aside>
+        </section>
+
+        <section class="research-loop" aria-labelledby="research-loop-title" data-research-loop>
+            <div class="loop-shell">
+                <header class="loop-heading">
+                    <p class="loop-eyebrow" data-i18n="loopLabel">RESEARCH LOOP · INTERACTIVE</p>
+                    <h2 id="research-loop-title" data-i18n="loopTitle">질문에서 현장의 결정까지</h2>
+                    <p data-i18n="loopLede">제가 AI 연구를 설계하는 흐름을 선택해 살펴보세요.</p>
+                </header>
+
+                <div class="loop-interface">
+                    <div class="loop-controls" data-loop-controls aria-label="연구 과정 선택"></div>
+                    <article class="loop-readout" id="research-loop-panel" aria-live="polite" data-loop-readout>
+                        <div class="loop-readout-topline">
+                            <span data-loop-index>01 / 04</span>
+                            <span class="loop-readout-icon" data-loop-icon></span>
+                        </div>
+                        <p class="loop-readout-label" data-loop-label>QUESTION</p>
+                        <h3 data-loop-title></h3>
+                        <p class="loop-readout-description" data-loop-description></p>
+                        <div class="loop-topology" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </section>
 
         <section class="section about-section" id="profile" aria-labelledby="profile-title">

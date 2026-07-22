@@ -29,6 +29,22 @@
 
 링크가 아직 없다면 `url` 줄을 삭제합니다.
 
+## 연구 과정 인터랙션 수정
+
+첫 화면 아래의 인터랙티브 연구 흐름은 `researchLoop: []`에서 관리합니다. 네 단계 구조를 유지하면서 각 단계의 아이콘, 짧은 영문 라벨, 한·영 제목과 설명을 수정하세요.
+
+```js
+{
+    icon: "scan-search",
+    label: "EVIDENCE",
+    title: { ko: "판단 근거를 사람의 언어로", en: "Make evidence legible" },
+    description: {
+        ko: "단계 설명을 입력합니다.",
+        en: "Describe this stage."
+    }
+}
+```
+
 ## 논문 또는 발표 추가
 
 `publications: []` 안에 항목을 넣는 순간 Publications 섹션과 메뉴가 자동으로 나타납니다.
@@ -58,11 +74,11 @@
 
 - `--paper`: 전체 배경
 - `--ink`: 기본 텍스트
-- `--signal`: 핵심 액센트
-- `--violet`: 키보드 포커스와 보조 액센트
+- `--ember`: 핵심 액센트
+- `--focus`: 키보드 포커스와 보조 액센트
 - `--page-gutter`: 좌우 여백
 
-액센트는 한 화면에서 서로 경쟁하지 않도록 `--signal`을 주역, `--violet`을 보조로 유지합니다.
+액센트는 한 화면에서 서로 경쟁하지 않도록 `--ember`를 주역, `--focus`를 보조로 유지합니다.
 
 ## 변경 후 확인
 

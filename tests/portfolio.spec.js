@@ -29,6 +29,19 @@ test("keeps semantic landmarks and prevents horizontal overflow", async ({ page 
     expect(widths.scroll).toBeLessThanOrEqual(widths.client + 1);
 });
 
+test("explores the AI research loop with accessible controls", async ({ page }) => {
+    const loopButtons = page.locator("[data-loop-stage]");
+    await expect(loopButtons).toHaveCount(4);
+    await expect(loopButtons.first()).toHaveAttribute("aria-pressed", "true");
+
+    const evidenceButton = page.getByRole("button", { name: /판단 근거를 사람의 언어로/ });
+    await evidenceButton.click();
+    await expect(evidenceButton).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("[data-loop-readout]")).toContainText("규칙 추출과 LLM");
+
+    await expect(page.locator("[data-scroll-progress]")).toHaveCount(1);
+});
+
 test("@visual hero remains visually stable", async ({ page }) => {
     await expect(page.locator("#home")).toHaveScreenshot("portfolio-hero.png", {
         animations: "disabled",

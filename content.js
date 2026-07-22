@@ -63,9 +63,49 @@ window.PORTFOLIO_CONTENT = {
         }
     ],
 
+    researchLoop: [
+        {
+            icon: "message-circle-question",
+            label: "QUESTION",
+            title: { ko: "문제를 연구 질문으로", en: "Frame the question" },
+            description: {
+                ko: "현장의 모호한 문제를 관찰 가능한 변수와 검증 가능한 연구 질문으로 바꿉니다.",
+                en: "Turn an ambiguous field problem into observable variables and a testable research question."
+            }
+        },
+        {
+            icon: "brain-circuit",
+            label: "MODEL",
+            title: { ko: "구조를 학습하는 모델", en: "Learn the structure" },
+            description: {
+                ko: "데이터와 도메인 지식을 함께 사용해 예측 성능뿐 아니라 문제의 구조를 학습합니다.",
+                en: "Use data and domain knowledge to learn the structure of the problem, not prediction performance alone."
+            }
+        },
+        {
+            icon: "scan-search",
+            label: "EVIDENCE",
+            title: { ko: "판단 근거를 사람의 언어로", en: "Make evidence legible" },
+            description: {
+                ko: "규칙 추출과 LLM을 연결해 모델의 판단 근거를 사람이 검토할 수 있는 설명으로 만듭니다.",
+                en: "Connect rule extraction and LLMs to turn model reasoning into explanations people can inspect."
+            }
+        },
+        {
+            icon: "route",
+            label: "DECISION",
+            title: { ko: "피드백을 다시 의사결정으로", en: "Return to decisions" },
+            description: {
+                ko: "사람의 피드백을 다시 모델과 운영 과정에 연결해 현장의 다음 의사결정을 돕습니다.",
+                en: "Feed human feedback back into the model and workflow to support the next field decision."
+            }
+        }
+    ],
+
     focus: [
         {
             title: { ko: "인간 중심 XAI", en: "Human-centered XAI" },
+            trace: ["MODEL", "RULE", "EXPLANATION"],
             description: {
                 ko: "앙상블 모델에서 규칙을 추출하고 LLM으로 자연어 설명을 생성해, 제조 분석 결과를 사람이 검토하고 활용할 수 있게 합니다.",
                 en: "Extract rules from ensemble models and turn them into natural-language explanations with LLMs so manufacturing insights can be inspected and used by people."
@@ -73,6 +113,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             title: { ko: "생산 지능", en: "Production intelligence" },
+            trace: ["FAB", "FLOW", "DECISION"],
             description: {
                 ko: "반도체 FAB의 디스패칭 규칙과 생산 네트워크의 병목·재공품 흐름을 학습해, 더 설명 가능한 운영 의사결정을 탐구합니다.",
                 en: "Learn dispatching rules and WIP flows in semiconductor fabs to support more interpretable operational decisions."
@@ -80,6 +121,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             title: { ko: "에너지 예측", en: "Energy forecasting" },
+            trace: ["WEATHER", "SEQUENCE", "FORECAST"],
             description: {
                 ko: "기상 예보와 관측 데이터를 함께 사용하는 Transformer 기반 시계열 모델로 풍력 발전량의 단기 예측을 연구합니다.",
                 en: "Study short-term wind-power forecasting with Transformer-based time-series models that combine weather forecasts and observations."

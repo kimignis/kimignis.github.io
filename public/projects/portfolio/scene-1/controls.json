@@ -2,6 +2,7 @@
   "controls": [
     { "sid": "signalColor", "label": "Signal color" },
     { "sid": "violetColor", "label": "Violet color" },
-    { "sid": "inkColor", "label": "Orbit line color" }
+    { "sid": "inkColor", "label": "Inference core color" },
+    { "sid": "mutedColor", "label": "Topology line color" }
   ]
 }

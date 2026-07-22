@@ -1,12 +1,13 @@
 # Minsik Kim · Personal Website
 
-경희대학교 산업지능연구실 김민식의 소개, 학력, 연구, 프로젝트와 논문을 담은 한·영 개인 홈페이지입니다. 별도 프레임워크 없이 HTML/CSS/JavaScript로 동작하며 GitHub Pages에 바로 올릴 수 있습니다.
+경희대학교 산업지능연구실 김민식의 소개, 학력, 연구, 프로젝트와 논문을 담은 한·영 인터랙티브 개인 홈페이지입니다. 연구 사고 과정을 탐색하는 인터랙션과 Lottie 기반 추론 네트워크를 포함하며, 별도 프레임워크 없이 HTML/CSS/JavaScript로 동작합니다.
 
 ## 가장 자주 하는 수정
 
 홈페이지 문구와 목록은 대부분 [`content.js`](content.js) 한 파일에서 바꿉니다.
 
 - 이름·헤드라인·소개: `profile`
+- 연구 과정 인터랙션: `researchLoop`
 - 연구 주제: `focus`
 - 프로젝트: `work`
 - 논문·발표: `publications`
