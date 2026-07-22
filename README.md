@@ -1,6 +1,6 @@
-# Minsik Kim · Research Portfolio
+# Minsik Kim · Personal Website
 
-경희대학교 산업지능연구실 김민식의 설명가능 AI·LLM·제조/생산 AI 연구를 소개하는 한·영 개인 홈페이지입니다. 별도 프레임워크 없이 HTML/CSS/JavaScript로 동작하며 GitHub Pages에 바로 올릴 수 있습니다.
+경희대학교 산업지능연구실 김민식의 소개, 학력, 연구, 프로젝트와 논문을 담은 한·영 개인 홈페이지입니다. 별도 프레임워크 없이 HTML/CSS/JavaScript로 동작하며 GitHub Pages에 바로 올릴 수 있습니다.
 
 ## 가장 자주 하는 수정
 

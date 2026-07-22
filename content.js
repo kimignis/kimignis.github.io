@@ -20,8 +20,8 @@ window.PORTFOLIO_CONTENT = {
             en: "Kyung Hee University · Industrial AI Lab."
         },
         headline: {
-            ko: "현장을 읽고,\n판단을\n설명합니다.",
-            en: "Read the field.\nExplain the\ndecision."
+            ko: "설명 가능한 AI로\n사람과 현장을 잇습니다.",
+            en: "Building explainable AI\nfor people and the field."
         },
         intro: {
             ko: "경희대학교 빅데이터응용학과 박사과정 김민식입니다. 설명가능 AI와 LLM을 중심으로 제조·생산 시스템의 예측과 의사결정을 연구합니다.",
@@ -44,6 +44,24 @@ window.PORTFOLIO_CONTENT = {
             en: "Models used in the field should not only be accurate; they should explain their decisions in language people can act on."
         }
     },
+
+    education: [
+        {
+            period: "2025—Present",
+            degree: { ko: "빅데이터응용학과 박사과정", en: "Ph.D. Student · Big Data Analytics" },
+            school: { ko: "경희대학교", en: "Kyung Hee University" }
+        },
+        {
+            period: "2023—2025",
+            degree: { ko: "빅데이터응용학 석사", en: "M.S. · Big Data Analytics" },
+            school: { ko: "경희대학교", en: "Kyung Hee University" }
+        },
+        {
+            period: "2017—2023",
+            degree: { ko: "산업경영공학 학사", en: "B.S. · Industrial & Management Systems Engineering" },
+            school: { ko: "경희대학교", en: "Kyung Hee University" }
+        }
+    ],
 
     focus: [
         {

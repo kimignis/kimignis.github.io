@@ -16,12 +16,14 @@ assert.match(content.site.lab, /^http:\/\/iai\.khu\.ac\.kr\//, "연구실 주소
 assert(content.focus.length >= 3, "연구 접근 항목은 3개 이상이어야 합니다.");
 assert(content.work.length >= 1, "대표 작업은 1개 이상이어야 합니다.");
 assert(content.publications.length >= 1, "논문 또는 발표는 1개 이상이어야 합니다.");
+assert(content.education.length >= 3, "학력 항목은 3개 이상이어야 합니다.");
 
 const localizedFields = [
     content.profile.name, content.profile.headline, content.profile.intro,
     ...content.focus.flatMap((item) => [item.title, item.description]),
     ...content.work.flatMap((item) => [item.title, item.summary]),
-    ...content.publications.flatMap((item) => [item.title, item.venue])
+    ...content.publications.flatMap((item) => [item.title, item.venue]),
+    ...content.education.flatMap((item) => [item.degree, item.school])
 ];
 localizedFields.forEach((field) => {
     assert(field.ko && field.en, "한글과 영문 값을 모두 입력하세요.");

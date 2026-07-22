@@ -6,11 +6,13 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("renders the Korean portfolio and switches to English", async ({ page }) => {
-    await expect(page.getByRole("heading", { level: 1 })).toHaveAttribute("aria-label", "현장을 읽고, 판단을 설명합니다.");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveAttribute("aria-label", "김민식 Minsik Kim");
+    await expect(page.locator(".hero-headline")).toHaveAttribute("aria-label", "설명 가능한 AI로 사람과 현장을 잇습니다.");
     const languageSwitch = page.getByRole("button", { name: "Switch to English" });
     await expect(languageSwitch).toHaveCount(1);
     await languageSwitch.click();
-    await expect(page.getByRole("heading", { level: 1 })).toHaveAttribute("aria-label", "Read the field. Explain the decision.");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveAttribute("aria-label", "김민식 Minsik Kim");
+    await expect(page.locator(".hero-headline")).toHaveAttribute("aria-label", "Building explainable AI for people and the field.");
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
 });
 
@@ -30,6 +32,7 @@ test("keeps semantic landmarks and prevents horizontal overflow", async ({ page 
 test("@visual hero remains visually stable", async ({ page }) => {
     await expect(page.locator("#home")).toHaveScreenshot("portfolio-hero.png", {
         animations: "disabled",
-        mask: [page.locator("#hero-motion")]
+        mask: [page.locator("#hero-motion")],
+        maskColor: "#eef1eb"
     });
 });

@@ -9,31 +9,54 @@
 
     const dictionary = {
         ko: {
-            skipLink: "본문으로 바로가기", openMenu: "메뉴 열기", closeMenu: "메뉴 닫기",
-            viewWork: "작업 보기", current: "CURRENT", based: "AFFILIATION",
-            focusLabel: "RESEARCH FOCUS", focusTitle: "설명 가능한 지능을 만드는 세 갈래",
+            skipLink: "본문으로 바로가기",
+            openMenu: "메뉴 열기",
+            closeMenu: "메뉴 닫기",
+            viewProfile: "소개 보기",
+            current: "CURRENT",
+            based: "AFFILIATION",
+            profileLabel: "ABOUT",
+            profileTitle: "연구하는 사람, 김민식",
+            principleLabel: "RESEARCH PRINCIPLE",
+            focusLabel: "RESEARCH FOCUS",
+            focusTitle: "세 가지 연구 방향",
             focusLede: "모델의 성능과 사람이 이해할 수 있는 근거를 함께 설계합니다.",
-            workLabel: "SELECTED WORK", workTitle: "문제에서 논문까지",
+            workLabel: "SELECTED WORK",
+            workTitle: "주요 연구와 프로젝트",
             workLede: "제조 현장의 의사결정과 에너지 예측을 실제 연구 결과로 연결합니다.",
-            publicationLabel: "PUBLICATIONS", publicationTitle: "논문과 발표",
-            profileLabel: "PROFILE", profileTitle: "작업의 배경과 도구",
-            contactLabel: "CONTACT", backToTop: "맨 위로",
-            nav: { focus: "연구", work: "프로젝트", publications: "논문", profile: "소개", contact: "연락" }
+            publicationLabel: "PUBLICATIONS",
+            publicationTitle: "논문과 발표",
+            publicationLede: "출판된 연구와 현재 이어가고 있는 작업입니다.",
+            contactLabel: "CONTACT",
+            backToTop: "맨 위로",
+            nav: { profile: "소개", focus: "연구", work: "프로젝트", publications: "논문", contact: "연락" }
         },
         en: {
-            skipLink: "Skip to content", openMenu: "Open menu", closeMenu: "Close menu",
-            viewWork: "View selected work", current: "CURRENT", based: "AFFILIATION",
-            focusLabel: "RESEARCH FOCUS", focusTitle: "Three paths to interpretable intelligence",
+            skipLink: "Skip to content",
+            openMenu: "Open menu",
+            closeMenu: "Close menu",
+            viewProfile: "About me",
+            current: "CURRENT",
+            based: "AFFILIATION",
+            profileLabel: "ABOUT",
+            profileTitle: "The person behind the research",
+            principleLabel: "RESEARCH PRINCIPLE",
+            focusLabel: "RESEARCH FOCUS",
+            focusTitle: "Three directions in my work",
             focusLede: "Designing for both model performance and evidence people can understand.",
-            workLabel: "SELECTED WORK", workTitle: "From problem to publication",
+            workLabel: "SELECTED WORK",
+            workTitle: "Selected research and projects",
             workLede: "Connecting decisions in manufacturing and energy forecasting to concrete research outcomes.",
-            publicationLabel: "PUBLICATIONS", publicationTitle: "Papers and talks",
-            profileLabel: "PROFILE", profileTitle: "Background and tools",
-            contactLabel: "CONTACT", backToTop: "Back to top",
-            nav: { focus: "Research", work: "Projects", publications: "Publications", profile: "Profile", contact: "Contact" }
+            publicationLabel: "PUBLICATIONS",
+            publicationTitle: "Papers and talks",
+            publicationLede: "Published research and the questions I am continuing to pursue.",
+            contactLabel: "CONTACT",
+            backToTop: "Back to top",
+            nav: { profile: "About", focus: "Research", work: "Projects", publications: "Publications", contact: "Contact" }
         }
     };
 
+    const focusIcons = ["scan-search", "network", "wind"];
     const selectAll = (selector, root = document) => Array.from(root.querySelectorAll(selector));
     const localized = (value, language) => {
         if (value == null) return "";
@@ -51,10 +74,10 @@
     if (!dictionary[language]) language = "ko";
 
     const sectionIds = () => [
-        "focus", "work", ...(content.publications.length ? ["publications"] : []), "profile", "contact"
+        "profile", "focus", "work", ...(content.publications.length ? ["publications"] : []), "contact"
     ];
 
-    function renderHeadline(selector, text) {
+    function renderMultiline(selector, text) {
         const target = document.querySelector(selector);
         target.replaceChildren(...text.split("\n").map((line) => {
             const span = document.createElement("span");
@@ -73,10 +96,25 @@
         document.querySelector("[data-mobile-nav-links]").innerHTML = links;
     }
 
+    function renderEducation() {
+        document.querySelector("[data-education-list]").innerHTML = content.education.map((item) => `
+            <article class="education-item">
+                <time>${escapeHtml(item.period)}</time>
+                <div>
+                    <h3>${escapeHtml(localized(item.degree, language))}</h3>
+                    <p>${escapeHtml(localized(item.school, language))}</p>
+                </div>
+            </article>
+        `).join("");
+    }
+
     function renderFocus() {
         document.querySelector("[data-focus-list]").innerHTML = content.focus.map((item, index) => `
             <article class="focus-item">
-                <p class="focus-number">${String(index + 1).padStart(2, "0")}</p>
+                <div class="focus-topline">
+                    <span>${String(index + 1).padStart(2, "0")}</span>
+                    <i data-lucide="${focusIcons[index] || "sparkles"}" aria-hidden="true"></i>
+                </div>
                 <h3>${escapeHtml(localized(item.title, language))}</h3>
                 <p>${escapeHtml(localized(item.description, language))}</p>
             </article>
@@ -84,19 +122,25 @@
     }
 
     function renderWork() {
-        document.querySelector("[data-work-list]").innerHTML = content.work.map((item) => {
+        document.querySelector("[data-work-list]").innerHTML = content.work.map((item, index) => {
             const tagName = item.url ? "a" : "article";
             const linkAttributes = item.url ? ` href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer"` : "";
             return `
                 <${tagName} class="work-item"${linkAttributes}>
-                    <span class="work-year">${escapeHtml(item.year)}</span>
-                    <div>
+                    <div class="work-order">
+                        <span>${String(index + 1).padStart(2, "0")}</span>
+                        <time>${escapeHtml(item.year)}</time>
+                    </div>
+                    <div class="work-copy">
                         <p class="work-type">${escapeHtml(localized(item.type, language))}</p>
                         <h3>${escapeHtml(localized(item.title, language))}</h3>
+                        <p class="work-summary">${escapeHtml(localized(item.summary, language))}</p>
                     </div>
-                    <p class="work-summary">${escapeHtml(localized(item.summary, language))}</p>
-                    <div class="work-tags" aria-label="Tags">
-                        ${item.tags.map((tag) => `<span class="work-tag">${escapeHtml(tag)}</span>`).join("")}
+                    <div class="work-footer">
+                        <div class="work-tags" aria-label="Tags">
+                            ${item.tags.map((tag) => `<span class="work-tag">${escapeHtml(tag)}</span>`).join("")}
+                        </div>
+                        ${item.url ? '<span class="work-link-mark"><i data-lucide="arrow-up-right" aria-hidden="true"></i></span>' : ""}
                     </div>
                 </${tagName}>
             `;
@@ -105,22 +149,19 @@
 
     function renderPublications() {
         const section = document.querySelector("[data-publication-section]");
-        const profileIndex = document.querySelector("[data-profile-index]");
         if (!content.publications.length) {
             section.hidden = true;
-            profileIndex.textContent = "03";
             return;
         }
 
         section.hidden = false;
-        profileIndex.textContent = "04";
         document.querySelector("[data-publication-list]").innerHTML = content.publications.map((item, index) => `
             <article class="publication-item">
-                <span class="work-year">${String(index + 1).padStart(2, "0")}</span>
-                <div>
+                <span class="publication-number">${String(index + 1).padStart(2, "0")}</span>
+                <div class="publication-copy">
+                    <p class="publication-venue">${escapeHtml(localized(item.venue, language))}</p>
                     <h3>${escapeHtml(localized(item.title, language))}</h3>
                     <p>${escapeHtml(item.authors || "")}</p>
-                    <p>${escapeHtml(localized(item.venue, language))}</p>
                 </div>
                 ${item.url ? `<a class="publication-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" aria-label="Open publication"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a>` : ""}
             </article>
@@ -133,14 +174,14 @@
             return `
                 <section class="skill-group">
                     <h3>${escapeHtml(localized(group.title, language))}</h3>
-                    <ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+                    <p>${items.map((item) => escapeHtml(item)).join(" · ")}</p>
                 </section>
             `;
         }).join("");
     }
 
     function renderContact() {
-        renderHeadline("[data-contact-heading]", localized(content.contact.heading, language));
+        renderMultiline("[data-contact-heading]", localized(content.contact.heading, language));
         document.querySelector("[data-contact-body]").textContent = localized(content.contact.body, language);
         document.querySelector("[data-contact-links]").innerHTML = content.contact.links.map((link) => `
             <a class="contact-link" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">
@@ -152,14 +193,14 @@
 
     function updateMetadata() {
         const isKo = language === "ko";
-        const title = isKo ? "김민식 · Research Portfolio" : "Minsik Kim · Research Portfolio";
+        const title = isKo ? "김민식 · Minsik Kim" : "Minsik Kim · Personal Website";
         const description = localized(content.profile.intro, language);
         document.title = title;
         document.querySelector('meta[name="description"]').setAttribute("content", description);
         document.querySelector('meta[property="og:title"]').setAttribute("content", title);
-        document.querySelector('meta[property="og:description"]').setAttribute("content", localized(content.profile.intro, language));
+        document.querySelector('meta[property="og:description"]').setAttribute("content", localized(content.profile.headline, language).replaceAll("\n", " "));
         document.querySelector('meta[name="twitter:title"]').setAttribute("content", title);
-        document.querySelector('meta[name="twitter:description"]').setAttribute("content", localized(content.profile.intro, language));
+        document.querySelector('meta[name="twitter:description"]').setAttribute("content", localized(content.profile.headline, language).replaceAll("\n", " "));
     }
 
     function updateStructuredData() {
@@ -179,6 +220,10 @@
                 "@type": "Organization",
                 name: "Industrial AI Lab., Kyung Hee University",
                 url: "http://iai.khu.ac.kr/"
+            },
+            alumniOf: {
+                "@type": "CollegeOrUniversity",
+                name: "Kyung Hee University"
             },
             knowsAbout: [
                 "Explainable AI",
@@ -201,20 +246,30 @@
             const key = element.dataset.i18n;
             if (dictionary[language][key]) element.textContent = dictionary[language][key];
         });
+        selectAll("[data-profile-name-ko]").forEach((element) => { element.textContent = content.profile.name.ko; });
         selectAll("[data-profile-name-en]").forEach((element) => { element.textContent = content.profile.nameEnglish; });
+        document.getElementById("hero-title").setAttribute("aria-label", `${content.profile.name.ko} ${content.profile.nameEnglish}`);
         document.querySelector("[data-profile-kicker]").textContent = localized(content.profile.kicker, language);
-        renderHeadline("[data-profile-headline]", localized(content.profile.headline, language));
+        renderMultiline("[data-profile-headline]", localized(content.profile.headline, language));
         document.querySelector("[data-profile-intro]").textContent = localized(content.profile.intro, language);
         document.querySelector("[data-profile-role]").textContent = localized(content.profile.role, language);
         document.querySelector("[data-profile-affiliation]").textContent = localized(content.profile.affiliation, language);
         document.querySelector("[data-profile-bio]").textContent = localized(content.profile.bio, language);
-        document.querySelector("[data-profile-statement]").textContent = localized(content.profile.statement, language);
+        selectAll("[data-profile-statement]").forEach((element) => { element.textContent = localized(content.profile.statement, language); });
         document.querySelector("[data-github-link]").href = content.site.github;
         document.querySelector("[data-language-current]").textContent = language.toUpperCase();
         document.querySelector("[data-language-next]").textContent = language === "ko" ? "EN" : "KO";
         document.querySelector("[data-language-switch]").setAttribute("aria-label", language === "ko" ? "Switch to English" : "한국어로 전환");
-        renderNavigation(); renderFocus(); renderWork(); renderPublications(); renderSkills(); renderContact();
-        updateMetadata(); updateStructuredData(); refreshIcons();
+        renderNavigation();
+        renderEducation();
+        renderFocus();
+        renderWork();
+        renderPublications();
+        renderSkills();
+        renderContact();
+        updateMetadata();
+        updateStructuredData();
+        refreshIcons();
     }
 
     function setupLanguageSwitch() {
@@ -241,21 +296,21 @@
             button.querySelector(".sr-only").textContent = dictionary[language][willOpen ? "closeMenu" : "openMenu"];
         });
         menu.addEventListener("click", (event) => { if (event.target.closest("a")) close(); });
-        window.addEventListener("resize", () => { if (window.innerWidth > 1080) close(); });
+        window.addEventListener("resize", () => { if (window.innerWidth > 980) close(); });
     }
 
-    let observer;
+    let sectionObserver;
     function setupSectionObserver() {
-        observer?.disconnect();
+        sectionObserver?.disconnect();
         const links = selectAll("[data-nav-id]");
-        observer = new IntersectionObserver((entries) => {
+        sectionObserver = new IntersectionObserver((entries) => {
             const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
             if (!visible) return;
             links.forEach((link) => link.setAttribute("aria-current", String(link.dataset.navId === visible.target.id)));
-        }, { rootMargin: "-25% 0px -62%", threshold: [0, 0.2, 0.6] });
+        }, { rootMargin: "-24% 0px -62%", threshold: [0, 0.2, 0.6] });
         sectionIds().forEach((id) => {
             const section = document.getElementById(id);
-            if (section) observer.observe(section);
+            if (section) sectionObserver.observe(section);
         });
     }
 
@@ -266,11 +321,28 @@
         window.addEventListener("scroll", update, { passive: true });
     }
 
+    function setupReveal() {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        const targets = selectAll(".section-heading, .about-grid, .skill-columns, .focus-item, .work-item, .publication-item");
+        targets.forEach((target) => target.classList.add("reveal-target"));
+        document.body.classList.add("reveal-ready");
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            });
+        }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
+        targets.forEach((target) => revealObserver.observe(target));
+    }
+
     function setupLottie() {
         if (!window.lottie) return;
         const container = document.getElementById("hero-motion");
         const animation = window.lottie.loadAnimation({
-            container, renderer: "svg", loop: true,
+            container,
+            renderer: "svg",
+            loop: true,
             autoplay: !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
             path: "public/projects/portfolio/scene-1/lottie.json",
             rendererSettings: { progressiveLoad: true, preserveAspectRatio: "xMidYMid meet" }
@@ -280,5 +352,10 @@
 
     render();
     document.querySelector("[data-current-year]").textContent = String(new Date().getFullYear());
-    setupLanguageSwitch(); setupMobileMenu(); setupSectionObserver(); setupHeader(); setupLottie();
+    setupLanguageSwitch();
+    setupMobileMenu();
+    setupSectionObserver();
+    setupHeader();
+    setupReveal();
+    setupLottie();
 })();

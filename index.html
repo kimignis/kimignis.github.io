@@ -4,26 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light">
-    <meta name="theme-color" content="#f3f0e8">
+    <meta name="theme-color" content="#14201c">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; img-src 'self' data: https://avatars.githubusercontent.com; font-src 'self' data: https://cdn.jsdelivr.net https://cdn.fontshare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://api.fontshare.com; script-src 'self' https://unpkg.com https://cdnjs.cloudflare.com; connect-src 'self'; upgrade-insecure-requests">
 
-    <title>김민식 · Research Portfolio</title>
-    <meta name="description" content="경희대학교 산업지능연구실 김민식의 연구 포트폴리오. 설명가능 AI, LLM, 제조·생산 AI, 풍력 발전량 예측 연구를 소개합니다.">
+    <title>김민식 · Minsik Kim</title>
+    <meta name="description" content="경희대학교 산업지능연구실 김민식의 개인 홈페이지. 설명가능 AI, LLM, 제조·생산 AI, 풍력 발전량 예측 연구를 소개합니다.">
     <link rel="canonical" href="https://kimignis.github.io/">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="profile">
     <meta property="og:locale" content="ko_KR">
     <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:title" content="김민식 · Research Portfolio">
-    <meta property="og:description" content="설명가능 AI와 LLM으로 제조·생산 시스템의 예측과 의사결정을 연구합니다.">
+    <meta property="og:title" content="김민식 · Minsik Kim">
+    <meta property="og:description" content="설명 가능한 AI로 사람과 현장을 잇습니다.">
     <meta property="og:url" content="https://kimignis.github.io/">
     <meta property="og:image" content="https://kimignis.github.io/assets/og.png">
     <meta property="og:image:width" content="1732">
     <meta property="og:image:height" content="908">
-    <meta property="og:image:alt" content="Minsik Kim Research Portfolio">
+    <meta property="og:image:alt" content="Minsik Kim personal website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="김민식 · Research Portfolio">
-    <meta name="twitter:description" content="설명가능 AI와 LLM으로 제조·생산 시스템의 예측과 의사결정을 연구합니다.">
+    <meta name="twitter:title" content="김민식 · Minsik Kim">
+    <meta name="twitter:description" content="설명 가능한 AI로 사람과 현장을 잇습니다.">
     <meta name="twitter:image" content="https://kimignis.github.io/assets/og.png">
 
     <script id="person-jsonld" type="application/ld+json">
@@ -57,7 +57,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600&f[]=satoshi@400,500,700&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -65,8 +65,11 @@
 
     <header class="site-header" data-header>
         <a class="wordmark" href="#home" aria-label="홈으로 이동">
-            <span class="wordmark-index">KM</span>
-            <span class="wordmark-name" data-profile-name-en>Minsik Kim</span>
+            <span class="wordmark-index">MK</span>
+            <span class="wordmark-copy">
+                <span class="wordmark-name" data-profile-name-en>Minsik Kim</span>
+                <span class="wordmark-caption">Researcher · AI</span>
+            </span>
         </a>
 
         <nav class="primary-nav" aria-label="주요 메뉴">
@@ -94,12 +97,19 @@
         <section class="hero" id="home" aria-labelledby="hero-title">
             <div class="hero-copy">
                 <p class="hero-kicker" data-profile-kicker></p>
-                <h1 id="hero-title" data-profile-headline></h1>
-                <p class="hero-intro" data-profile-intro></p>
+                <h1 id="hero-title">
+                    <span class="hero-name-ko" data-profile-name-ko>김민식</span>
+                    <span class="hero-name-en" data-profile-name-en>Minsik Kim</span>
+                </h1>
+
+                <div class="hero-summary">
+                    <p class="hero-headline" data-profile-headline></p>
+                    <p class="hero-intro" data-profile-intro></p>
+                </div>
 
                 <div class="hero-actions">
-                    <a class="primary-link" href="#work">
-                        <span data-i18n="viewWork">작업 보기</span>
+                    <a class="primary-link" href="#profile">
+                        <span data-i18n="viewProfile">소개 보기</span>
                         <i data-lucide="arrow-down-right" aria-hidden="true"></i>
                     </a>
                     <a class="text-link" data-github-link target="_blank" rel="noopener noreferrer">
@@ -107,81 +117,98 @@
                         <i data-lucide="arrow-up-right" aria-hidden="true"></i>
                     </a>
                 </div>
-
-                <div class="hero-meta">
-                    <div>
-                        <span class="meta-label" data-i18n="current">CURRENT</span>
-                        <span class="meta-value" data-profile-role></span>
-                    </div>
-                    <div>
-                        <span class="meta-label" data-i18n="based">AFFILIATION</span>
-                        <span class="meta-value" data-profile-affiliation></span>
-                    </div>
-                </div>
             </div>
 
-            <div class="hero-visual" aria-hidden="true">
-                <div class="hero-motion" id="hero-motion">
-                    <div class="motion-fallback">
-                        <span class="fallback-orbit fallback-orbit-a"></span>
-                        <span class="fallback-orbit fallback-orbit-b"></span>
-                        <span class="fallback-core"></span>
+            <aside class="hero-profile-panel" aria-label="프로필 요약">
+                <div class="profile-visual" aria-hidden="true">
+                    <div class="hero-motion" id="hero-motion">
+                        <div class="motion-fallback">
+                            <span class="fallback-orbit fallback-orbit-a"></span>
+                            <span class="fallback-orbit fallback-orbit-b"></span>
+                            <span class="fallback-core"></span>
+                        </div>
                     </div>
+                    <span class="visual-monogram">MK</span>
+                    <span class="visual-coordinate">37.24° N · 127.08° E</span>
                 </div>
-                <p class="visual-caption">QUESTION / EVIDENCE / TRACE</p>
+
+                <dl class="hero-facts">
+                    <div>
+                        <dt data-i18n="current">CURRENT</dt>
+                        <dd data-profile-role></dd>
+                    </div>
+                    <div>
+                        <dt data-i18n="based">AFFILIATION</dt>
+                        <dd data-profile-affiliation></dd>
+                    </div>
+                </dl>
+
+                <p class="profile-note" data-profile-statement></p>
+            </aside>
+        </section>
+
+        <section class="section about-section" id="profile" aria-labelledby="profile-title">
+            <div class="section-shell">
+                <header class="section-heading">
+                    <div class="section-marker">
+                        <span>01</span>
+                        <p class="section-label" data-i18n="profileLabel">ABOUT</p>
+                    </div>
+                    <h2 id="profile-title" data-i18n="profileTitle">연구하는 사람, 김민식</h2>
+                    <p class="section-lede" data-profile-bio></p>
+                </header>
+
+                <div class="about-grid">
+                    <div class="about-principle">
+                        <p class="principle-label" data-i18n="principleLabel">RESEARCH PRINCIPLE</p>
+                        <p data-profile-statement></p>
+                    </div>
+                    <div class="education-list" data-education-list></div>
+                </div>
+
+                <div class="skill-columns" data-skill-list></div>
             </div>
         </section>
 
         <section class="section focus-section" id="focus" aria-labelledby="focus-title">
-            <div class="section-heading">
-                <p class="section-index">01</p>
-                <div>
-                    <p class="section-label" data-i18n="focusLabel">RESEARCH APPROACH</p>
-                    <h2 id="focus-title" data-i18n="focusTitle">생각을 연구로 바꾸는 방식</h2>
-                </div>
-                <p class="section-lede" data-i18n="focusLede">질문에서 결과 공유까지, 반복 가능한 흐름을 중요하게 생각합니다.</p>
+            <div class="section-shell">
+                <header class="section-heading">
+                    <div class="section-marker">
+                        <span>02</span>
+                        <p class="section-label" data-i18n="focusLabel">RESEARCH FOCUS</p>
+                    </div>
+                    <h2 id="focus-title" data-i18n="focusTitle">세 가지 연구 방향</h2>
+                    <p class="section-lede" data-i18n="focusLede">모델의 성능과 사람이 이해할 수 있는 근거를 함께 설계합니다.</p>
+                </header>
+                <div class="focus-list" data-focus-list></div>
             </div>
-            <div class="focus-list" data-focus-list></div>
         </section>
 
         <section class="section work-section" id="work" aria-labelledby="work-title">
-            <div class="section-heading">
-                <p class="section-index">02</p>
-                <div>
-                    <p class="section-label" data-i18n="workLabel">SELECTED WORK</p>
-                    <h2 id="work-title" data-i18n="workTitle">진행 중인 탐구와 작업</h2>
-                </div>
-                <p class="section-lede" data-i18n="workLede">문제, 과정, 결과가 드러나는 기록을 남깁니다.</p>
+            <div class="section-shell">
+                <header class="section-heading">
+                    <div class="section-marker">
+                        <span>03</span>
+                        <p class="section-label" data-i18n="workLabel">SELECTED WORK</p>
+                    </div>
+                    <h2 id="work-title" data-i18n="workTitle">주요 연구와 프로젝트</h2>
+                    <p class="section-lede" data-i18n="workLede">제조 현장의 의사결정과 에너지 예측을 실제 연구 결과로 연결합니다.</p>
+                </header>
+                <div class="work-list" data-work-list></div>
             </div>
-            <div class="work-list" data-work-list></div>
         </section>
 
         <section class="section publication-section" id="publications" aria-labelledby="publication-title" data-publication-section hidden>
-            <div class="section-heading">
-                <p class="section-index">03</p>
-                <div>
-                    <p class="section-label" data-i18n="publicationLabel">PUBLICATIONS</p>
+            <div class="section-shell">
+                <header class="section-heading">
+                    <div class="section-marker">
+                        <span>04</span>
+                        <p class="section-label" data-i18n="publicationLabel">PUBLICATIONS</p>
+                    </div>
                     <h2 id="publication-title" data-i18n="publicationTitle">논문과 발표</h2>
-                </div>
-            </div>
-            <div class="publication-list" data-publication-list></div>
-        </section>
-
-        <section class="section profile-section" id="profile" aria-labelledby="profile-title">
-            <div class="section-heading">
-                <p class="section-index" data-profile-index>03</p>
-                <div>
-                    <p class="section-label" data-i18n="profileLabel">PROFILE</p>
-                    <h2 id="profile-title" data-i18n="profileTitle">작업의 배경과 도구</h2>
-                </div>
-                <p class="section-lede" data-profile-bio></p>
-            </div>
-            <div class="profile-grid">
-                <div class="profile-statement">
-                    <p class="statement-mark">“</p>
-                    <p data-profile-statement></p>
-                </div>
-                <div class="skill-columns" data-skill-list></div>
+                    <p class="section-lede" data-i18n="publicationLede">출판된 연구와 현재 이어가고 있는 작업입니다.</p>
+                </header>
+                <div class="publication-list" data-publication-list></div>
             </div>
         </section>
 
@@ -197,6 +224,7 @@
 
     <footer class="site-footer">
         <p><span data-profile-name-en>Minsik Kim</span> <span aria-hidden="true">/</span> <span data-current-year></span></p>
+        <p class="footer-note">Explainable AI · Manufacturing Intelligence</p>
         <a href="#home">
             <span data-i18n="backToTop">맨 위로</span>
             <i data-lucide="arrow-up" aria-hidden="true"></i>
