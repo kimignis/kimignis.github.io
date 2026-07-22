@@ -135,9 +135,29 @@
                 <div>
                     <h3>${localized(item.degree)}</h3>
                     <p>${localized(item.school)}</p>
+                    ${item.detail ? `<p class="education-detail">${localized(item.detail)}</p>` : ""}
                 </div>
             </article>
         `).join("");
+    }
+
+    function renderCredentials() {
+        document.querySelector("[data-credential-list]").innerHTML = `
+            <header class="credential-heading">
+                <span>${state.language === "ko" ? "자격증 / 수료증" : "Credentials"}</span>
+                <span>${String(content.credentials.length).padStart(2, "0")}</span>
+            </header>
+            ${content.credentials.map((item) => `
+                <article class="credential-item">
+                    <time>${item.issued}</time>
+                    <div>
+                        <h3>${localized(item.title)}</h3>
+                        <p>${localized(item.issuer)}</p>
+                    </div>
+                    <i data-lucide="badge-check" aria-hidden="true"></i>
+                </article>
+            `).join("")}
+        `;
     }
 
     function renderSkills() {
@@ -266,6 +286,7 @@
         renderNavigation();
         renderStaticCopy();
         renderEducation();
+        renderCredentials();
         renderSkills();
         renderFocus();
         renderWork();

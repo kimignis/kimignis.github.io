@@ -43,6 +43,13 @@ test("explores the industrial AI research matrix with accessible controls", asyn
     await expect(page.locator("[data-scroll-progress]")).toHaveCount(1);
 });
 
+test("shows verified LinkedIn profile and credentials", async ({ page }) => {
+    const linkedIn = page.getByRole("link", { name: "LinkedIn" });
+    await expect(linkedIn).toHaveAttribute("href", /linkedin\.com\/in\//);
+    await expect(page.getByText("Deep Learning Specialization", { exact: true })).toHaveCount(1);
+    await expect(page.getByText("Google for Developers Machine Learning Bootcamp", { exact: true })).toHaveCount(1);
+});
+
 test("@visual hero remains visually stable", async ({ page }) => {
     await expect(page.locator("#home")).toHaveScreenshot("portfolio-hero.png", {
         animations: "disabled"

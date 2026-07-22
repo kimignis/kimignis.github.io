@@ -9,6 +9,7 @@ window.PORTFOLIO_CONTENT = {
         url: "https://kimignis.github.io/",
         defaultLanguage: "ko",
         github: "https://github.com/kimignis",
+        linkedin: "https://www.linkedin.com/in/%EB%AF%BC%EC%8B%9D-%EA%B9%80-9b32a8293/",
         lab: "http://iai.khu.ac.kr/wiki/wiki.php/Members#s-3"
     },
 
@@ -24,8 +25,8 @@ window.PORTFOLIO_CONTENT = {
             en: "Building explainable AI\nfor people and the field."
         },
         intro: {
-            ko: "경희대학교 빅데이터응용학과 박사과정 김민식입니다. 설명가능 AI와 LLM을 중심으로 제조·생산 시스템의 예측과 의사결정을 연구합니다.",
-            en: "I am a Ph.D. student in Big Data Analytics at Kyung Hee University, studying explainable AI and LLMs for prediction and decision-making in manufacturing and production systems."
+            ko: "경희대학교 빅데이터응용학과 박사과정이자 산업AI연구실 연구원입니다. 제조 시스템의 의사결정을 지원하는 산업 인공지능을 연구하며 Process Mining, GNN, LLM, AI Agents를 활용합니다.",
+            en: "I am a Ph.D. student in Big Data Analytics and a researcher at Kyung Hee University's Industrial AI Lab. I study Industrial AI for manufacturing decisions using process mining, GNNs, LLMs, and AI agents."
         },
         role: {
             ko: "빅데이터응용학과 박사과정",
@@ -36,8 +37,8 @@ window.PORTFOLIO_CONTENT = {
             en: "Industrial AI Lab. · Kyung Hee University"
         },
         bio: {
-            ko: "산업경영공학을 전공하고 빅데이터응용학 석사를 마쳤습니다. 앙상블 트리에서 규칙을 추출하고 LLM으로 자연어 설명을 만드는 석사 연구를 바탕으로, 인간 중심의 제조 AI를 확장하고 있습니다.",
-            en: "After studying Industrial & Management Systems Engineering and completing an M.S. in Big Data Analytics, I am extending my master's work on rule extraction and LLM-generated explanations toward human-centered manufacturing AI."
+            ko: "산업경영공학을 전공하고 빅데이터응용학 석사를 마쳤습니다. 현재 제조 현장의 지능형 지원을 위한 AI Agents, Agentic AI, Multi-Agent Systems, 설명가능 AI를 연구하며 생산 스케줄링·물류 최적화와 운영 전문지식을 연결하는 실용적이고 신뢰할 수 있는 산업 AI를 설계하고 있습니다.",
+            en: "After studying Industrial & Management Systems Engineering and completing an M.S. in Big Data Analytics, I now research AI agents, agentic AI, multi-agent systems, and explainable AI for manufacturing assistance, connecting production scheduling and logistics optimization with operational expertise."
         },
         statement: {
             ko: "현장에 쓰이는 모델은 정확도뿐 아니라, 왜 그런 판단을 했는지 사람의 언어로 설명할 수 있어야 한다고 생각합니다.",
@@ -47,19 +48,35 @@ window.PORTFOLIO_CONTENT = {
 
     education: [
         {
-            period: "2025—Present",
+            period: "2025.02—2029.02",
             degree: { ko: "빅데이터응용학과 박사과정", en: "Ph.D. Student · Big Data Analytics" },
-            school: { ko: "경희대학교", en: "Kyung Hee University" }
+            school: { ko: "경희대학교", en: "Kyung Hee University" },
+            detail: { ko: "산업AI연구실", en: "Industrial AI Lab." }
         },
         {
-            period: "2023—2025",
+            period: "2023.03—2025.02",
             degree: { ko: "빅데이터응용학 석사", en: "M.S. · Big Data Analytics" },
-            school: { ko: "경희대학교", en: "Kyung Hee University" }
+            school: { ko: "경희대학교", en: "Kyung Hee University" },
+            detail: { ko: "산업AI연구실", en: "Industrial AI Lab." }
         },
         {
-            period: "2017—2023",
+            period: "2017.03—2023.02",
             degree: { ko: "산업경영공학 학사", en: "B.S. · Industrial & Management Systems Engineering" },
-            school: { ko: "경희대학교", en: "Kyung Hee University" }
+            school: { ko: "경희대학교", en: "Kyung Hee University" },
+            detail: { ko: "동아리와 학회 · CAPTIMA", en: "Student club and society · CAPTIMA" }
+        }
+    ],
+
+    credentials: [
+        {
+            issued: "2023.10",
+            title: { ko: "Deep Learning Specialization", en: "Deep Learning Specialization" },
+            issuer: { ko: "Coursera", en: "Coursera" }
+        },
+        {
+            issued: "2023.09",
+            title: { ko: "Google for Developers Machine Learning Bootcamp", en: "Google for Developers Machine Learning Bootcamp" },
+            issuer: { ko: "Google Developers Group", en: "Google Developers Group" }
         }
     ],
 
@@ -285,22 +302,22 @@ window.PORTFOLIO_CONTENT = {
         {
             title: { ko: "Research focus", en: "Research focus" },
             items: {
-                ko: ["설명가능 AI", "대규모 언어 모델", "인간 중심 AI"],
-                en: ["Explainable AI", "Large language models", "Human-centered AI"]
+                ko: ["산업 인공지능", "AI 에이전트", "설명가능 AI"],
+                en: ["Industrial AI", "AI agents", "Explainable AI"]
             }
         },
         {
             title: { ko: "Methods", en: "Methods" },
             items: {
-                ko: ["딥러닝 · 머신러닝", "Transformer", "규칙 추출 · GNN"],
-                en: ["Deep & machine learning", "Transformers", "Rule extraction · GNNs"]
+                ko: ["Process Mining · GNN", "LLM · Agentic AI", "Multi-Agent Systems"],
+                en: ["Process mining · GNNs", "LLMs · Agentic AI", "Multi-agent systems"]
             }
         },
         {
             title: { ko: "Domains", en: "Domains" },
             items: {
-                ko: ["제조 분석", "반도체 생산 시스템", "재생에너지 예측"],
-                en: ["Manufacturing analytics", "Semiconductor production", "Renewable-energy forecasting"]
+                ko: ["지능형 제조 지원", "생산 스케줄링", "물류 최적화"],
+                en: ["Manufacturing assistance", "Production scheduling", "Logistics optimization"]
             }
         },
         {
@@ -318,10 +335,11 @@ window.PORTFOLIO_CONTENT = {
             en: "Let’s talk about\nAI people can understand."
         },
         body: {
-            ko: "제조 AI, XAI, LLM, 시계열 예측에 관한 연구와 협업 제안을 환영합니다. 공개 작업과 최신 기록은 GitHub와 연구실 페이지에서 확인할 수 있습니다.",
-            en: "I welcome research conversations and collaborations around manufacturing AI, XAI, LLMs, and time-series forecasting. Current public work is available on GitHub and the lab page."
+            ko: "산업 AI, 제조 지능, AI Agents, XAI에 관한 연구와 협업 제안을 환영합니다. 공개 작업과 최신 프로필은 LinkedIn, GitHub, 연구실 페이지에서 확인할 수 있습니다.",
+            en: "I welcome research conversations and collaborations around Industrial AI, manufacturing intelligence, AI agents, and XAI. Current work and profile updates are available on LinkedIn, GitHub, and the lab page."
         },
         links: [
+            { label: "LinkedIn", url: "https://www.linkedin.com/in/%EB%AF%BC%EC%8B%9D-%EA%B9%80-9b32a8293/", icon: "linkedin" },
             { label: "GitHub", url: "https://github.com/kimignis", icon: "github" },
             { label: "IAI Lab.", url: "http://iai.khu.ac.kr/wiki/wiki.php/Members#s-3", icon: "building-2" },
             { label: "FAIM 2024", url: "https://doi.org/10.1007/978-3-031-74482-2_11", icon: "book-open-text" }
