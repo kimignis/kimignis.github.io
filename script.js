@@ -31,7 +31,9 @@
             focusLede: "모델의 성능과 사람이 이해할 수 있는 근거를 함께 설계합니다.",
             workLabel: "RESEARCH PROJECT",
             workTitle: "참여한<br>연구 과제",
-            workLede: "산업체·정부 R&D 과제를 중복 단계 없이 통합해 참여기간과 역할 중심으로 정리했습니다.",
+            workLede: "현재 진행 중인 과제와 완료한 산업체·정부 R&D 과제를 참여기간과 역할 중심으로 정리했습니다.",
+            workOngoing: "Ongoing",
+            workPast: "Past",
             publicationLabel: "PUBLICATION",
             publicationTitle: "논문과 발표",
             publicationLede: "국내외 학술대회와 저널을 구분해 연구 기록을 정리합니다.",
@@ -59,7 +61,9 @@
             focusLede: "I design model performance together with evidence people can understand.",
             workLabel: "RESEARCH PROJECT",
             workTitle: "Research<br>projects",
-            workLede: "Industry and government-funded R&D projects consolidated by participation period and role.",
+            workLede: "Ongoing and completed industry and government-funded R&D projects, organized by participation period and role.",
+            workOngoing: "Ongoing",
+            workPast: "Past",
             publicationLabel: "PUBLICATION",
             publicationTitle: "Papers and talks",
             publicationLede: "Research records organized by domestic and international conferences and journals.",
@@ -195,26 +199,44 @@
     }
 
     function renderWork() {
-        document.querySelector("[data-work-list]").innerHTML = content.work.map((item) => {
+        const renderWorkItem = (item) => {
             const [periodStart, periodEnd] = item.year.split("—");
             return `
-            <article class="work-item" data-reveal>
-                <span class="work-year" aria-label="${item.year}">
-                    <span>${periodStart}</span>
-                    <span aria-hidden="true">—</span>
-                    <span>${periodEnd}</span>
-                </span>
-                <div>
-                    <span class="work-type">${localized(item.type)}</span>
-                    <h3>${localized(item.title)}</h3>
-                </div>
-                <div class="work-copy">
-                    <p>${localized(item.summary)}</p>
-                    <div class="work-tags">${item.tags.map((tag) => `<span>${tag}</span>`).join("")}</div>
-                </div>
-                ${item.url ? `<a class="item-link" href="${item.url}" target="_blank" rel="noopener noreferrer" aria-label="${localized(item.title)}"><i data-lucide="arrow-up-right"></i></a>` : ""}
-            </article>
-        `;
+                <article class="work-item" data-reveal>
+                    <span class="work-year" aria-label="${item.year}">
+                        <span>${periodStart}</span>
+                        <span aria-hidden="true">—</span>
+                        <span>${periodEnd}</span>
+                    </span>
+                    <div>
+                        <span class="work-type">${localized(item.type)}</span>
+                        <h3>${localized(item.title)}</h3>
+                    </div>
+                    <div class="work-copy">
+                        <p>${localized(item.summary)}</p>
+                        <div class="work-tags">${item.tags.map((tag) => `<span>${tag}</span>`).join("")}</div>
+                    </div>
+                    ${item.url ? `<a class="item-link" href="${item.url}" target="_blank" rel="noopener noreferrer" aria-label="${localized(item.title)}"><i data-lucide="arrow-up-right"></i></a>` : ""}
+                </article>
+            `;
+        };
+        const groups = [
+            { id: "ongoing", label: copy[state.language].workOngoing },
+            { id: "past", label: copy[state.language].workPast }
+        ];
+
+        document.querySelector("[data-work-list]").innerHTML = groups.map((group, groupIndex) => {
+            const items = content.work.filter((item) => item.status === group.id);
+            return `
+                <section class="work-group" data-project-status="${group.id}">
+                    <header class="work-group-heading">
+                        <span>${String(groupIndex + 1).padStart(2, "0")}</span>
+                        <h3>${group.label}</h3>
+                        <span>${String(items.length).padStart(2, "0")}</span>
+                    </header>
+                    <div class="work-group-list">${items.map(renderWorkItem).join("")}</div>
+                </section>
+            `;
         }).join("");
     }
 

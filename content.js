@@ -228,6 +228,7 @@ window.PORTFOLIO_CONTENT = {
     work: [
         {
             year: "2025.09—2026.02",
+            status: "ongoing",
             type: { ko: "한국연구재단 · 연구조원", en: "National Research Foundation of Korea · Research assistant" },
             title: {
                 ko: "비언어적 의사전달을 위한 뇌-AI 인터페이스 및 뇌파-언어 모델 개발",
@@ -241,6 +242,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             year: "2025.07—2025.09",
+            status: "past",
             type: { ko: "현대엔지비 · 멘토", en: "Hyundai NGV · Mentor" },
             title: {
                 ko: "부트캠퍼스 과정 기획·개발 자문 및 교육",
@@ -254,6 +256,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             year: "2025.04—2026.02",
+            status: "ongoing",
             type: { ko: "한화오션 · 연구조원", en: "Hanwha Ocean · Research assistant" },
             title: {
                 ko: "설비 및 공정 통합 관제를 위한 제조 특화 SLM 개발",
@@ -267,6 +270,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             year: "2024.10—2025.09",
+            status: "past",
             type: { ko: "SK하이닉스 · 연구조원", en: "SK hynix · Research assistant" },
             title: {
                 ko: "디지털 트윈 환경을 위한 Bottleneck 공정 목표 WIP 산출 및 관리방안 연구",
@@ -280,6 +284,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             year: "2024.09—2026.02",
+            status: "ongoing",
             type: { ko: "한국산업기술기획평가원 · 연구조원", en: "KEIT · Research assistant" },
             title: {
                 ko: "생성형 AI 및 소량데이터 기반 온디바이스 AI 품질 검사 최적화 기술 개발",
@@ -293,6 +298,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             year: "2024.03—2025.11",
+            status: "past",
             type: { ko: "정보통신기획평가원 · 연구조원", en: "IITP · Research assistant" },
             title: {
                 ko: "인공지능융합혁신인재양성 — 경희대학교",
@@ -306,6 +312,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             year: "2024.03—2025.02",
+            status: "past",
             type: { ko: "경희대학교 · 연구조원", en: "Kyung Hee University · Research assistant" },
             title: {
                 ko: "설명가능한 AI를 이용한 Transformer 기반 풍력 발전 예측 기술 개발",
@@ -319,6 +326,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             year: "2023.03—2025.02",
+            status: "past",
             type: { ko: "한국연구재단 BK21 · 연구조원", en: "NRF BK21 · Research assistant" },
             title: {
                 ko: "지속가능 빅데이터 신산업 선도인력 교육연구단",
@@ -332,6 +340,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             year: "2023.11—2024.04",
+            status: "past",
             type: { ko: "씨에스피아이 · 연구조원", en: "CSPI · Research assistant" },
             title: {
                 ko: "AI를 활용한 하이퍼클러스터 기반 디스패칭 규칙 생성",
@@ -345,6 +354,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             year: "2023.04—2023.09",
+            status: "past",
             type: { ko: "씨에스피아이 · 연구조원", en: "CSPI · Research assistant" },
             title: {
                 ko: "AI 기반 반도체 디스패칭 검증 및 해석 규칙 생성 기술 고도화",
@@ -358,6 +368,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             year: "2023.01—2024.02",
+            status: "past",
             type: { ko: "방위사업청 · 연구조원", en: "Defense Acquisition Program Administration · Research assistant" },
             title: {
                 ko: "자율운항 성능 고도화를 위한 해상환경 학습 데이터셋 구축체계 AI 모델링 및 고도화",
@@ -371,6 +382,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             year: "2023.01—2023.04",
+            status: "past",
             type: { ko: "한국산업기술기획평가원 · 연구조원", en: "KEIT · Research assistant" },
             title: {
                 ko: "운항성능 저하 분석 기반 최적 선체 관리 시점 결정 기술 개발",

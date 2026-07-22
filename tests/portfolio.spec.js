@@ -75,6 +75,10 @@ test("renders the publication bibliography, awards, and manuscript states", asyn
 
 test("presents twelve consolidated research projects", async ({ page }) => {
     await expect(page.locator("[data-work-list] .work-item")).toHaveCount(12);
+    await expect(page.locator("[data-project-status='ongoing'] .work-item")).toHaveCount(3);
+    await expect(page.locator("[data-project-status='past'] .work-item")).toHaveCount(9);
+    await expect(page.getByRole("heading", { name: "Ongoing" })).toHaveCount(1);
+    await expect(page.getByRole("heading", { name: "Past" })).toHaveCount(1);
     await expect(page.getByRole("heading", { name: "디지털 트윈 환경을 위한 Bottleneck 공정 목표 WIP 산출 및 관리방안 연구" })).toHaveCount(1);
     await expect(page.getByRole("heading", { name: "설비 및 공정 통합 관제를 위한 제조 특화 SLM 개발" })).toHaveCount(1);
     await expect(page.getByText("SK하이닉스 · 연구조원", { exact: true })).toHaveCount(1);

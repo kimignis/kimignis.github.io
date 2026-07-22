@@ -20,8 +20,11 @@ const workTitles = content.work.map((item) => item.title.ko);
 assert.equal(new Set(workTitles).size, workTitles.length, "Research Project 제목은 중복될 수 없습니다.");
 content.work.forEach((item) => {
     assert.match(item.year, /^\d{4}\.\d{2}—\d{4}\.\d{2}$/, "과제 참여기간은 YYYY.MM—YYYY.MM 형식이어야 합니다.");
+    assert(["ongoing", "past"].includes(item.status), "Research Project에는 ongoing 또는 past 상태가 필요합니다.");
     assert(item.tags.length >= 3, "Research Project마다 연구 키워드가 3개 이상 필요합니다.");
 });
+assert.equal(content.work.filter((item) => item.status === "ongoing").length, 3, "Ongoing 과제는 3개여야 합니다.");
+assert.equal(content.work.filter((item) => item.status === "past").length, 9, "Past 과제는 9개여야 합니다.");
 assert.equal(content.publications.length, 16, "정리된 논문 및 학술대회 발표는 16개여야 합니다.");
 assert.equal(content.publicationCategories.length, 4, "Publication 분류는 4개여야 합니다.");
 const publicationCategoryIds = new Set(content.publicationCategories.map((item) => item.id));
