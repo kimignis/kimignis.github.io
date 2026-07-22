@@ -62,6 +62,14 @@ test("uses a researcher-oriented structure and four publication groups", async (
     await expect(page.locator(".profile-research [data-focus-list]")).toHaveCount(1);
 });
 
+test("presents twelve consolidated research projects", async ({ page }) => {
+    await expect(page.locator("[data-work-list] .work-item")).toHaveCount(12);
+    await expect(page.getByRole("heading", { name: "디지털 트윈 환경을 위한 Bottleneck 공정 목표 WIP 산출 및 관리방안 연구" })).toHaveCount(1);
+    await expect(page.getByRole("heading", { name: "설비 및 공정 통합 관제를 위한 제조 특화 SLM 개발" })).toHaveCount(1);
+    await expect(page.getByText("SK하이닉스 · 연구조원", { exact: true })).toHaveCount(1);
+    await expect(page.locator('.work-year[aria-label="2025.09—2026.02"]')).toHaveCount(1);
+});
+
 test("@visual hero remains visually stable", async ({ page }) => {
     await expect(page.locator("#home")).toHaveScreenshot("portfolio-hero.png", {
         animations: "disabled"

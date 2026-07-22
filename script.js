@@ -30,8 +30,8 @@
             profileResearchTitle: "관심 연구 영역",
             focusLede: "모델의 성능과 사람이 이해할 수 있는 근거를 함께 설계합니다.",
             workLabel: "RESEARCH PROJECT",
-            workTitle: "연구에서<br>현장까지",
-            workLede: "제조 현장의 의사결정과 에너지 예측을 실제 연구 결과로 연결합니다.",
+            workTitle: "참여한<br>연구 과제",
+            workLede: "산업체·정부 R&D 과제를 중복 단계 없이 통합해 참여기간과 역할 중심으로 정리했습니다.",
             publicationLabel: "PUBLICATION",
             publicationTitle: "논문과 발표",
             publicationLede: "국내외 학술대회와 저널을 구분해 연구 기록을 정리합니다.",
@@ -58,8 +58,8 @@
             profileResearchTitle: "Research Interests",
             focusLede: "I design model performance together with evidence people can understand.",
             workLabel: "RESEARCH PROJECT",
-            workTitle: "From research<br>to the field",
-            workLede: "Connecting manufacturing decisions and energy forecasting to tangible research outcomes.",
+            workTitle: "Research<br>projects",
+            workLede: "Industry and government-funded R&D projects consolidated by participation period and role.",
             publicationLabel: "PUBLICATION",
             publicationTitle: "Papers and talks",
             publicationLede: "Research records organized by domestic and international conferences and journals.",
@@ -184,9 +184,15 @@
     }
 
     function renderWork() {
-        document.querySelector("[data-work-list]").innerHTML = content.work.map((item) => `
+        document.querySelector("[data-work-list]").innerHTML = content.work.map((item) => {
+            const [periodStart, periodEnd] = item.year.split("—");
+            return `
             <article class="work-item" data-reveal>
-                <span class="work-year">${item.year}</span>
+                <span class="work-year" aria-label="${item.year}">
+                    <span>${periodStart}</span>
+                    <span aria-hidden="true">—</span>
+                    <span>${periodEnd}</span>
+                </span>
                 <div>
                     <span class="work-type">${localized(item.type)}</span>
                     <h3>${localized(item.title)}</h3>
@@ -197,7 +203,8 @@
                 </div>
                 ${item.url ? `<a class="item-link" href="${item.url}" target="_blank" rel="noopener noreferrer" aria-label="${localized(item.title)}"><i data-lucide="arrow-up-right"></i></a>` : ""}
             </article>
-        `).join("");
+        `;
+        }).join("");
     }
 
     function renderPublications() {

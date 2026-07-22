@@ -227,35 +227,160 @@ window.PORTFOLIO_CONTENT = {
 
     work: [
         {
-            year: "2025—",
-            type: { ko: "박사 연구 · XAI + LLM", en: "Doctoral research · XAI + LLM" },
-            title: { ko: "설명에서 상호작용으로", en: "From explanation to interaction" },
-            summary: {
-                ko: "LLM이 생성한 자연어 규칙 설명과 human-on-the-loop 피드백을 결합해, 제조 품질 예측 시스템이 현장 변화에 적응하는 방식을 연구합니다.",
-                en: "Investigating how LLM-generated rule explanations and human-on-the-loop feedback can help manufacturing quality prediction systems adapt to change."
+            year: "2025.09—2026.02",
+            type: { ko: "한국연구재단 · 연구조원", en: "National Research Foundation of Korea · Research assistant" },
+            title: {
+                ko: "비언어적 의사전달을 위한 뇌-AI 인터페이스 및 뇌파-언어 모델 개발",
+                en: "Brain–AI Interface and Brainwave-to-Language Model for Nonverbal Communication"
             },
-            tags: ["Explainable AI", "LLM", "Human-in-the-loop"]
+            summary: {
+                ko: "비언어적 의사전달을 지원하는 뇌-AI 인터페이스와 뇌파 기반 언어 모델 개발 과제에 참여했습니다.",
+                en: "Participated in developing a brain–AI interface and brainwave-based language model for nonverbal communication."
+            },
+            tags: ["Brain–AI Interface", "Multimodal AI", "Language Model"]
         },
         {
-            year: "2023—24",
-            type: { ko: "출판 연구 · 생산 AI", en: "Published research · Production AI" },
-            title: { ko: "반도체 FAB 디스패칭 규칙 발견", en: "Discovering semiconductor dispatching rules" },
-            summary: {
-                ko: "블랙박스 예측 성능에 머무르지 않고, 해석 가능한 머신러닝을 이용해 반도체 생산 현장의 작업 할당 규칙을 발견했습니다.",
-                en: "Used interpretable machine learning to discover actionable job-dispatching rules in a semiconductor fab, moving beyond black-box prediction alone."
+            year: "2025.07—2025.09",
+            type: { ko: "현대엔지비 · 멘토", en: "Hyundai NGV · Mentor" },
+            title: {
+                ko: "부트캠퍼스 과정 기획·개발 자문 및 교육",
+                en: "Bootcamp Curriculum Planning, Development Advisory, and Training"
             },
-            tags: ["Semiconductor FAB", "Interpretable ML", "FAIM 2024"],
-            url: "https://doi.org/10.1007/978-3-031-74482-2_11"
+            summary: {
+                ko: "딥러닝 기반 부트캠프의 과정 기획과 개발을 자문하고 교육 멘토로 참여했습니다.",
+                en: "Advised on the planning and development of a deep-learning bootcamp and contributed as an educational mentor."
+            },
+            tags: ["Deep Learning", "Education", "Mentoring"]
         },
         {
-            year: "2022—",
-            type: { ko: "시계열 연구 · 스마트 에너지", en: "Time-series research · Smart energy" },
-            title: { ko: "기상 정보를 결합한 풍력 발전량 예측", en: "Wind-power forecasting with weather data" },
-            summary: {
-                ko: "기상 예보와 관측의 차이를 함께 다루는 dual-input encoder–decoder Transformer로 단기 풍력 발전량 예측을 고도화하고 있습니다.",
-                en: "Developing a dual-input encoder–decoder Transformer that jointly models weather forecasts and observations for short-term wind-power forecasting."
+            year: "2025.04—2026.02",
+            type: { ko: "한화오션 · 연구조원", en: "Hanwha Ocean · Research assistant" },
+            title: {
+                ko: "설비 및 공정 통합 관제를 위한 제조 특화 SLM 개발",
+                en: "Manufacturing-Specific SLM for Integrated Equipment and Process Monitoring"
             },
-            tags: ["Transformer", "Time series", "Wind power"]
+            summary: {
+                ko: "설비와 공정 정보를 통합 관제하는 제조 도메인 특화 소형 언어 모델의 알고리즘 개발에 참여했습니다.",
+                en: "Contributed to algorithm development for a manufacturing-specific small language model that integrates equipment and process monitoring."
+            },
+            tags: ["SLM", "Manufacturing AI", "Integrated Monitoring"]
+        },
+        {
+            year: "2024.10—2025.09",
+            type: { ko: "SK하이닉스 · 연구조원", en: "SK hynix · Research assistant" },
+            title: {
+                ko: "디지털 트윈 환경을 위한 Bottleneck 공정 목표 WIP 산출 및 관리방안 연구",
+                en: "Target WIP Estimation and Control for Bottleneck Processes in a Digital-Twin Environment"
+            },
+            summary: {
+                ko: "On-die Oscilloscope 데이터를 활용해 반도체 병목 공정의 목표 WIP를 산출하고 관리하는 알고리즘을 개발했습니다.",
+                en: "Developed algorithms to estimate and manage target WIP for semiconductor bottleneck processes using on-die oscilloscope data."
+            },
+            tags: ["Digital Twin", "Semiconductor FAB", "WIP Control"]
+        },
+        {
+            year: "2024.09—2026.02",
+            type: { ko: "한국산업기술기획평가원 · 연구조원", en: "KEIT · Research assistant" },
+            title: {
+                ko: "생성형 AI 및 소량데이터 기반 온디바이스 AI 품질 검사 최적화 기술 개발",
+                en: "Generative and Small-Data On-Device AI for Optimized Quality Inspection"
+            },
+            summary: {
+                ko: "제한된 제조 데이터를 활용해 현장에서 동작하는 온디바이스 AI 품질 검사 기술을 최적화하는 연구에 참여했습니다.",
+                en: "Participated in optimizing on-device AI quality inspection that operates with limited manufacturing data."
+            },
+            tags: ["Generative AI", "On-device AI", "Quality Inspection"]
+        },
+        {
+            year: "2024.03—2025.11",
+            type: { ko: "정보통신기획평가원 · 연구조원", en: "IITP · Research assistant" },
+            title: {
+                ko: "인공지능융합혁신인재양성 — 경희대학교",
+                en: "AI Convergence Innovation Talent Development — Kyung Hee University"
+            },
+            summary: {
+                ko: "산업 문제와 AI 기술을 연결하는 융합형 연구·교육 프로그램의 3·4단계 과제에 참여했습니다.",
+                en: "Contributed to phases three and four of an interdisciplinary research and education program connecting industrial problems with AI."
+            },
+            tags: ["AI Convergence", "Industrial AI", "Research Education"]
+        },
+        {
+            year: "2024.03—2025.02",
+            type: { ko: "경희대학교 · 연구조원", en: "Kyung Hee University · Research assistant" },
+            title: {
+                ko: "설명가능한 AI를 이용한 Transformer 기반 풍력 발전 예측 기술 개발",
+                en: "Transformer-Based Wind-Power Forecasting with Explainable AI"
+            },
+            summary: {
+                ko: "기상 데이터 기반 풍력 발전 예측 모델에 설명가능성을 결합하는 딥러닝 알고리즘을 개발했습니다.",
+                en: "Developed deep-learning algorithms that combine weather-based wind-power forecasting with explainable AI."
+            },
+            tags: ["Transformer", "Explainable AI", "Wind Power"]
+        },
+        {
+            year: "2023.03—2025.02",
+            type: { ko: "한국연구재단 BK21 · 연구조원", en: "NRF BK21 · Research assistant" },
+            title: {
+                ko: "지속가능 빅데이터 신산업 선도인력 교육연구단",
+                en: "Education and Research Group for Sustainable Big-Data Industries"
+            },
+            summary: {
+                ko: "지속가능한 빅데이터 신산업을 이끌 연구인력 양성을 위한 BK21 교육·연구 과제에 참여했습니다.",
+                en: "Participated in a BK21 education and research initiative for developing talent in sustainable big-data industries."
+            },
+            tags: ["BK21", "Big Data", "Research Education"]
+        },
+        {
+            year: "2023.11—2024.04",
+            type: { ko: "씨에스피아이 · 연구조원", en: "CSPI · Research assistant" },
+            title: {
+                ko: "AI를 활용한 하이퍼클러스터 기반 디스패칭 규칙 생성",
+                en: "AI-Driven Dispatching Rule Generation for Hyper-Cluster Systems"
+            },
+            summary: {
+                ko: "하이퍼클러스터 환경의 운영 의사결정을 지원하는 머신러닝 기반 디스패칭 규칙 생성 알고리즘을 개발했습니다.",
+                en: "Developed machine-learning algorithms for dispatching rule generation to support operations in hyper-cluster environments."
+            },
+            tags: ["Machine Learning", "Dispatching", "Decision Support"]
+        },
+        {
+            year: "2023.04—2023.09",
+            type: { ko: "씨에스피아이 · 연구조원", en: "CSPI · Research assistant" },
+            title: {
+                ko: "AI 기반 반도체 디스패칭 검증 및 해석 규칙 생성 기술 고도화",
+                en: "AI-Based Semiconductor Dispatching Validation and Interpretable Rule Generation"
+            },
+            summary: {
+                ko: "반도체 디스패칭 결과를 검증하고 사람이 이해할 수 있는 운영 규칙을 생성하는 AI 알고리즘을 고도화했습니다.",
+                en: "Advanced AI algorithms that validate semiconductor dispatching results and generate human-interpretable operating rules."
+            },
+            tags: ["Semiconductor FAB", "Interpretable ML", "Dispatching"]
+        },
+        {
+            year: "2023.01—2024.02",
+            type: { ko: "방위사업청 · 연구조원", en: "Defense Acquisition Program Administration · Research assistant" },
+            title: {
+                ko: "자율운항 성능 고도화를 위한 해상환경 학습 데이터셋 구축체계 AI 모델링 및 고도화",
+                en: "AI Modeling and Advancement of Maritime-Environment Datasets for Autonomous Navigation"
+            },
+            summary: {
+                ko: "자율운항 성능 향상을 위한 해상환경 학습 데이터셋 구축과 AI 모델링 연구에 단계별로 참여했습니다.",
+                en: "Contributed across project phases to maritime-environment dataset construction and AI modeling for autonomous navigation."
+            },
+            tags: ["Autonomous Navigation", "Dataset Engineering", "Deep Learning"]
+        },
+        {
+            year: "2023.01—2023.04",
+            type: { ko: "한국산업기술기획평가원 · 연구조원", en: "KEIT · Research assistant" },
+            title: {
+                ko: "운항성능 저하 분석 기반 최적 선체 관리 시점 결정 기술 개발",
+                en: "Optimal Hull-Maintenance Timing through Ship Performance Degradation Analysis"
+            },
+            summary: {
+                ko: "실제 운항 환경의 성능 저하를 분석해 선박 운항비 절감을 위한 최적 선체 관리 시점을 도출하는 연구에 참여했습니다.",
+                en: "Participated in analyzing real-world ship performance degradation to determine hull-maintenance timing that reduces operating costs."
+            },
+            tags: ["Maritime AI", "Predictive Maintenance", "Optimization"]
         }
     ],
 
