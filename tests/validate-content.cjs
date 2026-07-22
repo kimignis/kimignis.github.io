@@ -43,6 +43,7 @@ content.publications.filter((item) => item.status).forEach((item) => {
 assert(content.education.length >= 3, "학력 항목은 3개 이상이어야 합니다.");
 assert(content.credentials.length >= 2, "자격증 또는 수료증은 2개 이상이어야 합니다.");
 assert(content.contact.links.some((item) => item.url === content.site.linkedin), "Contact에 LinkedIn 링크가 필요합니다.");
+assert(!content.contact.links.some((item) => item.label === "FAIM 2024"), "Contact에는 FAIM 2024 링크를 표시하지 않습니다.");
 assert.equal(content.researchLoop.length, 4, "연구 루프는 4단계여야 합니다.");
 assert.equal(content.researchMatrix.methods.length, 3, "연구 방법은 3개여야 합니다.");
 assert.equal(content.researchMatrix.applications.length, 3, "연구 응용 분야는 3개여야 합니다.");

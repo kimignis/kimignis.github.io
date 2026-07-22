@@ -641,8 +641,7 @@ window.PORTFOLIO_CONTENT = {
         links: [
             { label: "LinkedIn", url: "https://www.linkedin.com/in/%EB%AF%BC%EC%8B%9D-%EA%B9%80-9b32a8293/", icon: "linkedin" },
             { label: "GitHub", url: "https://github.com/kimignis", icon: "github" },
-            { label: "IAI Lab.", url: "http://iai.khu.ac.kr/wiki/wiki.php/Members#s-3", icon: "building-2" },
-            { label: "FAIM 2024", url: "https://doi.org/10.1007/978-3-031-74482-2_11", icon: "book-open-text" }
+            { label: "IAI Lab.", url: "http://iai.khu.ac.kr/wiki/wiki.php/Members#s-3", icon: "building-2" }
         ]
     }
 };
