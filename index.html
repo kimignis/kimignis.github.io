@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light">
-    <meta name="theme-color" content="#14201c">
+    <meta name="theme-color" content="#173568">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; img-src 'self' data: https://avatars.githubusercontent.com; font-src 'self' data: https://cdn.jsdelivr.net https://cdn.fontshare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://api.fontshare.com; script-src 'self' https://unpkg.com https://cdnjs.cloudflare.com; connect-src 'self'; upgrade-insecure-requests">
 
@@ -57,19 +57,22 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600&f[]=satoshi@400,500,700&display=swap">
-    <link rel="stylesheet" href="style.css?v=20260722-ai-loop">
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600&display=swap">
+    <link rel="stylesheet" href="style.css?v=20260722-matrix2">
 </head>
 <body>
     <a class="skip-link" href="#main-content" data-i18n="skipLink">본문으로 바로가기</a>
 
+    <aside class="lab-rail" aria-label="경희대학교 산업지능연구실">
+        <a class="rail-monogram" href="#home" aria-label="홈으로 이동">MK</a>
+        <p>KYUNG HEE UNIVERSITY <span>·</span> INDUSTRIAL AI LAB</p>
+        <span class="rail-index">01</span>
+    </aside>
+
     <header class="site-header" data-header>
-        <a class="wordmark" href="#home" aria-label="홈으로 이동">
-            <span class="wordmark-index">MK</span>
-            <span class="wordmark-copy">
-                <span class="wordmark-name" data-profile-name-en>Minsik Kim</span>
-                <span class="wordmark-caption">Researcher · AI</span>
-            </span>
+        <a class="mobile-wordmark" href="#home" aria-label="홈으로 이동">
+            <span>MK</span>
+            <small>INDUSTRIAL AI LAB</small>
         </a>
 
         <nav class="primary-nav" aria-label="주요 메뉴">
@@ -79,7 +82,7 @@
         <div class="header-actions">
             <button class="language-switch" type="button" data-language-switch aria-label="Switch to English">
                 <span data-language-current>KO</span>
-                <span class="language-divider" aria-hidden="true"></span>
+                <span aria-hidden="true">/</span>
                 <span data-language-next>EN</span>
             </button>
             <button class="menu-button" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-menu">
@@ -102,15 +105,16 @@
                     <span class="hero-name-ko" data-profile-name-ko>김민식</span>
                     <span class="hero-name-en" data-profile-name-en>Minsik Kim</span>
                 </h1>
-
-                <div class="hero-summary">
-                    <p class="hero-headline" data-profile-headline></p>
-                    <p class="hero-intro" data-profile-intro></p>
+                <p class="hero-role" data-i18n="heroRole">Industrial AI Researcher</p>
+                <p class="hero-headline" data-profile-headline></p>
+                <p class="hero-intro" data-profile-intro></p>
+                <div class="hero-meta">
+                    <p><span data-i18n="current">CURRENT</span><strong data-profile-role></strong></p>
+                    <p><span data-i18n="affiliation">AFFILIATION</span><strong data-profile-affiliation></strong></p>
                 </div>
-
                 <div class="hero-actions">
                     <a class="primary-link" href="#profile">
-                        <span data-i18n="viewProfile">소개 보기</span>
+                        <span data-i18n="viewProfile">프로필 살펴보기</span>
                         <i data-lucide="arrow-down-right" aria-hidden="true"></i>
                     </a>
                     <a class="text-link" data-github-link target="_blank" rel="noopener noreferrer">
@@ -120,152 +124,114 @@
                 </div>
             </div>
 
-            <aside class="hero-profile-panel" aria-label="프로필 요약">
-                <div class="profile-visual" data-profile-visual aria-hidden="true">
-                    <div class="hero-motion" id="hero-motion">
-                        <div class="motion-fallback">
-                            <span class="fallback-orbit fallback-orbit-a"></span>
-                            <span class="fallback-orbit fallback-orbit-b"></span>
-                            <span class="fallback-core"></span>
-                        </div>
-                    </div>
-                    <span class="visual-probe"></span>
-                    <span class="visual-monogram">MK</span>
-                    <span class="visual-coordinate">XAI · LLM · MFG</span>
-                </div>
-
-                <dl class="hero-facts">
-                    <div>
-                        <dt data-i18n="current">CURRENT</dt>
-                        <dd data-profile-role></dd>
-                    </div>
-                    <div>
-                        <dt data-i18n="based">AFFILIATION</dt>
-                        <dd data-profile-affiliation></dd>
-                    </div>
-                </dl>
-
-                <p class="profile-note" data-profile-statement></p>
-            </aside>
-        </section>
-
-        <section class="research-loop" aria-labelledby="research-loop-title" data-research-loop>
-            <div class="loop-shell">
-                <header class="loop-heading">
-                    <p class="loop-eyebrow" data-i18n="loopLabel">RESEARCH LOOP · INTERACTIVE</p>
-                    <h2 id="research-loop-title" data-i18n="loopTitle">질문에서 현장의 결정까지</h2>
-                    <p data-i18n="loopLede">제가 AI 연구를 설계하는 흐름을 선택해 살펴보세요.</p>
+            <section class="research-matrix" aria-labelledby="matrix-title" data-research-matrix>
+                <header class="matrix-heading">
+                    <p data-i18n="matrixEyebrow">RESEARCH MAP · INTERACTIVE</p>
+                    <h2 id="matrix-title" data-i18n="matrixTitle">연구 응용 분야 × 연구 방법</h2>
+                    <span data-i18n="matrixInstruction">교차점을 선택해 연구 주제를 살펴보세요.</span>
                 </header>
 
-                <div class="loop-interface">
-                    <div class="loop-controls" data-loop-controls aria-label="연구 과정 선택"></div>
-                    <article class="loop-readout" id="research-loop-panel" aria-live="polite" data-loop-readout>
-                        <div class="loop-readout-topline">
-                            <span data-loop-index>01 / 04</span>
-                            <span class="loop-readout-icon" data-loop-icon></span>
-                        </div>
-                        <p class="loop-readout-label" data-loop-label>QUESTION</p>
-                        <h3 data-loop-title></h3>
-                        <p class="loop-readout-description" data-loop-description></p>
-                        <div class="loop-topology" aria-hidden="true">
-                            <span></span><span></span><span></span><span></span>
-                        </div>
-                    </article>
+                <div class="matrix-stage">
+                    <p class="matrix-axis-title matrix-axis-title-x" data-i18n="methods">RESEARCH METHODS</p>
+                    <p class="matrix-axis-title matrix-axis-title-y" data-i18n="applications">RESEARCH APPLICATIONS</p>
+                    <div class="matrix-columns" data-matrix-columns></div>
+                    <div class="matrix-rows" data-matrix-rows></div>
+                    <div class="matrix-plot" data-matrix-plot>
+                        <span class="grid-line grid-line-v grid-v-1"></span>
+                        <span class="grid-line grid-line-v grid-v-2"></span>
+                        <span class="grid-line grid-line-v grid-v-3"></span>
+                        <span class="grid-line grid-line-h grid-h-1"></span>
+                        <span class="grid-line grid-line-h grid-h-2"></span>
+                        <span class="grid-line grid-line-h grid-h-3"></span>
+                        <div class="matrix-motion" id="matrix-motion" aria-hidden="true"></div>
+                        <div class="matrix-nodes" data-matrix-nodes></div>
+                    </div>
                 </div>
+
+                <article class="matrix-readout" aria-live="polite">
+                    <span class="matrix-coordinate" data-matrix-coordinate>01 / 09</span>
+                    <div>
+                        <h3 data-matrix-title></h3>
+                        <p data-matrix-description></p>
+                    </div>
+                    <i data-lucide="scan-search" aria-hidden="true"></i>
+                </article>
+            </section>
+
+            <div class="hero-footer">
+                <p data-profile-statement></p>
+                <span>IAI / KHU / 2026</span>
             </div>
         </section>
 
-        <section class="section about-section" id="profile" aria-labelledby="profile-title">
-            <div class="section-shell">
-                <header class="section-heading">
-                    <div class="section-marker">
-                        <span>01</span>
-                        <p class="section-label" data-i18n="profileLabel">ABOUT</p>
-                    </div>
-                    <h2 id="profile-title" data-i18n="profileTitle">연구하는 사람, 김민식</h2>
-                    <p class="section-lede" data-profile-bio></p>
-                </header>
-
-                <div class="about-grid">
-                    <div class="about-principle">
-                        <p class="principle-label" data-i18n="principleLabel">RESEARCH PRINCIPLE</p>
-                        <p data-profile-statement></p>
-                    </div>
-                    <div class="education-list" data-education-list></div>
-                </div>
-
+        <section class="section profile-section" id="profile" aria-labelledby="profile-title">
+            <div class="section-index">01</div>
+            <div class="section-intro">
+                <p class="section-label" data-i18n="profileLabel">PROFILE</p>
+                <h2 id="profile-title" data-i18n="profileTitle">산업의 문제를<br>설명 가능한 지능으로.</h2>
+            </div>
+            <div class="profile-content">
+                <p class="section-lede" data-profile-bio></p>
+                <div class="education-list" data-education-list></div>
                 <div class="skill-columns" data-skill-list></div>
             </div>
         </section>
 
-        <section class="section focus-section" id="focus" aria-labelledby="focus-title">
-            <div class="section-shell">
-                <header class="section-heading">
-                    <div class="section-marker">
-                        <span>02</span>
-                        <p class="section-label" data-i18n="focusLabel">RESEARCH FOCUS</p>
-                    </div>
-                    <h2 id="focus-title" data-i18n="focusTitle">세 가지 연구 방향</h2>
-                    <p class="section-lede" data-i18n="focusLede">모델의 성능과 사람이 이해할 수 있는 근거를 함께 설계합니다.</p>
-                </header>
+        <section class="section focus-section" id="research" aria-labelledby="focus-title">
+            <div class="section-index">02</div>
+            <div class="section-intro">
+                <p class="section-label" data-i18n="focusLabel">RESEARCH</p>
+                <h2 id="focus-title" data-i18n="focusTitle">세 가지 연구 축</h2>
+            </div>
+            <div class="section-body">
+                <p class="section-lede" data-i18n="focusLede">모델의 성능과 사람이 이해할 수 있는 근거를 함께 설계합니다.</p>
                 <div class="focus-list" data-focus-list></div>
             </div>
         </section>
 
-        <section class="section work-section" id="work" aria-labelledby="work-title">
-            <div class="section-shell">
-                <header class="section-heading">
-                    <div class="section-marker">
-                        <span>03</span>
-                        <p class="section-label" data-i18n="workLabel">SELECTED WORK</p>
-                    </div>
-                    <h2 id="work-title" data-i18n="workTitle">주요 연구와 프로젝트</h2>
-                    <p class="section-lede" data-i18n="workLede">제조 현장의 의사결정과 에너지 예측을 실제 연구 결과로 연결합니다.</p>
-                </header>
+        <section class="section work-section" id="projects" aria-labelledby="work-title">
+            <div class="section-index">03</div>
+            <div class="section-intro">
+                <p class="section-label" data-i18n="workLabel">PROJECTS</p>
+                <h2 id="work-title" data-i18n="workTitle">연구에서<br>현장까지</h2>
+            </div>
+            <div class="section-body">
+                <p class="section-lede" data-i18n="workLede">제조 현장의 의사결정과 에너지 예측을 실제 연구 결과로 연결합니다.</p>
                 <div class="work-list" data-work-list></div>
             </div>
         </section>
 
         <section class="section publication-section" id="publications" aria-labelledby="publication-title" data-publication-section hidden>
-            <div class="section-shell">
-                <header class="section-heading">
-                    <div class="section-marker">
-                        <span>04</span>
-                        <p class="section-label" data-i18n="publicationLabel">PUBLICATIONS</p>
-                    </div>
-                    <h2 id="publication-title" data-i18n="publicationTitle">논문과 발표</h2>
-                    <p class="section-lede" data-i18n="publicationLede">출판된 연구와 현재 이어가고 있는 작업입니다.</p>
-                </header>
+            <div class="section-index">04</div>
+            <div class="section-intro">
+                <p class="section-label" data-i18n="publicationLabel">PUBLICATIONS</p>
+                <h2 id="publication-title" data-i18n="publicationTitle">논문과 발표</h2>
+            </div>
+            <div class="section-body">
+                <p class="section-lede" data-i18n="publicationLede">출판된 연구와 현재 이어가고 있는 작업입니다.</p>
                 <div class="publication-list" data-publication-list></div>
             </div>
         </section>
 
         <section class="contact-section" id="contact" aria-labelledby="contact-title">
-            <div class="contact-copy">
-                <p class="section-label" data-i18n="contactLabel">CONTACT</p>
-                <h2 id="contact-title" data-contact-heading></h2>
-                <p data-contact-body></p>
-            </div>
+            <p class="section-label" data-i18n="contactLabel">CONTACT / COLLABORATION</p>
+            <h2 id="contact-title" data-contact-heading></h2>
+            <p data-contact-body></p>
             <div class="contact-actions" data-contact-links></div>
         </section>
     </main>
 
     <footer class="site-footer">
         <p><span data-profile-name-en>Minsik Kim</span> <span aria-hidden="true">/</span> <span data-current-year></span></p>
-        <p class="footer-note">Explainable AI · Manufacturing Intelligence</p>
-        <a href="#home">
-            <span data-i18n="backToTop">맨 위로</span>
-            <i data-lucide="arrow-up" aria-hidden="true"></i>
-        </a>
+        <p>Kyung Hee University · Industrial AI Lab.</p>
+        <a href="#home"><span data-i18n="backToTop">맨 위로</span><i data-lucide="arrow-up" aria-hidden="true"></i></a>
     </footer>
 
-    <noscript>
-        <div class="noscript-message">이 사이트의 콘텐츠를 보려면 JavaScript를 활성화해주세요.</div>
-    </noscript>
+    <noscript><div class="noscript-message">이 사이트의 콘텐츠를 보려면 JavaScript를 활성화해주세요.</div></noscript>
 
-    <script defer src="content.js?v=20260722-ai-loop"></script>
-    <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-    <script defer src="script.js?v=20260722-ai-loop"></script>
+    <script defer src="content.js?v=20260722-matrix2"></script>
+    <script defer src="vendor/lucide.min.js?v=0.468.0"></script>
+    <script defer src="vendor/lottie.min.js?v=5.12.2"></script>
+    <script defer src="script.js?v=20260722-matrix2"></script>
 </body>
 </html>

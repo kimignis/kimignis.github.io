@@ -63,6 +63,85 @@ window.PORTFOLIO_CONTENT = {
         }
     ],
 
+    researchMatrix: {
+        methods: [
+            { ko: "설명가능 AI", en: "XAI" },
+            { ko: "대규모 언어 모델", en: "LLM" },
+            { ko: "인간 중심 AI", en: "Human-Centered AI" }
+        ],
+        applications: [
+            { ko: "생산 AI", en: "Production AI" },
+            { ko: "제조 AI", en: "Manufacturing AI" },
+            { ko: "생성형 AI", en: "Generative AI" }
+        ],
+        cells: [
+            {
+                title: { ko: "설명 가능한 생산 의사결정", en: "Explainable production decisions" },
+                description: {
+                    ko: "반도체 FAB의 디스패칭 규칙과 생산 흐름을 사람이 검토할 수 있는 근거로 바꿉니다.",
+                    en: "Turn semiconductor FAB dispatching rules and production flows into evidence people can inspect."
+                }
+            },
+            {
+                title: { ko: "생산 지식의 언어화", en: "Production knowledge in language" },
+                description: {
+                    ko: "현장의 운영 지식과 모델 결과를 LLM으로 연결해 자연어 설명과 피드백 흐름을 설계합니다.",
+                    en: "Connect operational knowledge and model outputs with LLMs to design explanations and feedback loops."
+                }
+            },
+            {
+                title: { ko: "사람 중심 생산 지능", en: "Human-centered production intelligence" },
+                description: {
+                    ko: "운영자의 판단과 모델의 예측이 서로 보완되는 생산 의사결정 방식을 탐구합니다.",
+                    en: "Explore production decisions where operator judgment and model predictions reinforce each other."
+                }
+            },
+            {
+                title: { ko: "제조 모델의 판단 근거", en: "Evidence behind manufacturing models" },
+                description: {
+                    ko: "앙상블 모델에서 규칙을 추출해 품질 예측과 제조 분석의 판단 구조를 드러냅니다.",
+                    en: "Extract rules from ensemble models to reveal the reasoning behind quality prediction and manufacturing analytics."
+                }
+            },
+            {
+                title: { ko: "LLM 기반 제조 설명", en: "LLM-assisted manufacturing explanations" },
+                description: {
+                    ko: "추출된 규칙을 LLM이 이해하기 쉬운 자연어로 변환해 현장 검토 가능성을 높입니다.",
+                    en: "Use LLMs to translate extracted rules into accessible language for practical review."
+                }
+            },
+            {
+                title: { ko: "Human-on-the-loop 제조 AI", en: "Human-on-the-loop manufacturing AI" },
+                description: {
+                    ko: "사람의 피드백을 품질 예측 시스템에 다시 연결해 현장 변화에 적응하는 AI를 연구합니다.",
+                    en: "Feed human feedback into quality prediction systems to study AI that adapts to field changes."
+                }
+            },
+            {
+                title: { ko: "생성 모델의 해석 가능성", en: "Interpreting generative models" },
+                description: {
+                    ko: "생성형 모델의 결과가 어떤 근거와 맥락에서 만들어졌는지 검토할 수 있는 설명 방식을 탐색합니다.",
+                    en: "Explore explanations that make the evidence and context behind generative outputs inspectable."
+                }
+            },
+            {
+                title: { ko: "산업 지식을 다루는 LLM", en: "LLMs for industrial knowledge" },
+                description: {
+                    ko: "산업 데이터와 도메인 지식을 연결해 현장에서 활용 가능한 언어 기반 AI를 설계합니다.",
+                    en: "Connect industrial data and domain knowledge to design language-based AI for real operations."
+                }
+            },
+            {
+                title: { ko: "사람과 생성형 AI의 협업", en: "Human–generative AI collaboration" },
+                description: {
+                    ko: "사람이 생성 결과를 이해하고 수정하며 다음 판단에 반영할 수 있는 상호작용을 연구합니다.",
+                    en: "Study interactions that help people understand, revise, and act on generative outputs."
+                }
+            }
+        ],
+        featuredPath: [0, 1, 2, 5, 4, 7, 6]
+    },
+
     researchLoop: [
         {
             icon: "message-circle-question",
