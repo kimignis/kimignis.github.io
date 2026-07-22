@@ -1,0 +1,9 @@
+node_modules/
+playwright-report/
+test-results/
+.tmp-cv-render/
+.agents/
+skills-lock.json
+/소스자료/
+.DS_Store
+Thumbs.db

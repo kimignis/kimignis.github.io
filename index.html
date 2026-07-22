@@ -1,373 +1,215 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!doctype html>
+<html lang="ko" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kim Minsik - Graduate Student CV</title>
-    <meta name="description" content="Academic CV and Portfolio of Kim Minsik, Graduate Student in [Your Field]">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f3f0e8">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; img-src 'self' data: https://avatars.githubusercontent.com; font-src 'self' data: https://cdn.jsdelivr.net https://cdn.fontshare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://api.fontshare.com; script-src 'self' https://unpkg.com https://cdnjs.cloudflare.com; connect-src 'self'; upgrade-insecure-requests">
+
+    <title>김민식 · Research Portfolio</title>
+    <meta name="description" content="경희대학교 산업지능연구실 김민식의 연구 포트폴리오. 설명가능 AI, LLM, 제조·생산 AI, 풍력 발전량 예측 연구를 소개합니다.">
+    <link rel="canonical" href="https://kimignis.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="김민식 · Research Portfolio">
+    <meta property="og:description" content="설명가능 AI와 LLM으로 제조·생산 시스템의 예측과 의사결정을 연구합니다.">
+    <meta property="og:url" content="https://kimignis.github.io/">
+    <meta property="og:image" content="https://kimignis.github.io/assets/og.png">
+    <meta property="og:image:width" content="1732">
+    <meta property="og:image:height" content="908">
+    <meta property="og:image:alt" content="Minsik Kim Research Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="김민식 · Research Portfolio">
+    <meta name="twitter:description" content="설명가능 AI와 LLM으로 제조·생산 시스템의 예측과 의사결정을 연구합니다.">
+    <meta name="twitter:image" content="https://kimignis.github.io/assets/og.png">
+
+    <script id="person-jsonld" type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "김민식",
+        "alternateName": "Minsik Kim",
+        "url": "https://kimignis.github.io/",
+        "sameAs": [
+            "https://github.com/kimignis",
+            "http://iai.khu.ac.kr/wiki/wiki.php/Members#s-3"
+        ],
+        "jobTitle": "빅데이터응용학과 박사과정",
+        "affiliation": {
+            "@type": "Organization",
+            "name": "Industrial AI Lab., Kyung Hee University",
+            "url": "http://iai.khu.ac.kr/"
+        },
+        "knowsAbout": [
+            "Explainable AI",
+            "Large Language Models",
+            "Manufacturing Analytics",
+            "Production Intelligence",
+            "Wind Power Forecasting"
+        ]
+    }
+    </script>
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
+    <a class="skip-link" href="#main-content" data-i18n="skipLink">본문으로 바로가기</a>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">Kim Minsik</a>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link active">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#research" class="nav-link">Research</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#publications" class="nav-link">Publications</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#cv" class="nav-link">CV</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+    <header class="site-header" data-header>
+        <a class="wordmark" href="#home" aria-label="홈으로 이동">
+            <span class="wordmark-index">KM</span>
+            <span class="wordmark-name" data-profile-name-en>Minsik Kim</span>
+        </a>
+
+        <nav class="primary-nav" aria-label="주요 메뉴">
+            <div class="nav-links" data-nav-links></div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="language-switch" type="button" data-language-switch aria-label="Switch to English">
+                <span data-language-current>KO</span>
+                <span class="language-divider" aria-hidden="true"></span>
+                <span data-language-next>EN</span>
+            </button>
+            <button class="menu-button" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-menu">
+                <span class="sr-only" data-i18n="openMenu">메뉴 열기</span>
+                <span></span><span></span>
+            </button>
         </div>
-    </nav>
 
-    <!-- Home / Landing Section -->
-    <section id="home" class="landing-section">
-        <div class="landing-content">
-            <h1 class="greeting">Hi, I'm <span class="highlight-title">Kim Minsik</span></h1>
-            <p class="subtitle">Graduate Student in [Your Field]</p>
-            <div class="dynamic-text">
-                <span class="txt-rotate" data-period="2000" data-rotate='["Researcher", "Problem Solver", "Data Scientist", "Engineer"]'></span>
-            </div>
-            <p class="affiliation">[Your University] · [Your Department/Lab]</p>
-            <div class="social-links-landing">
-                <a href="mailto:kimignis@example.edu" class="social-link" target="_blank" rel="noreferrer">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://scholar.google.com" class="social-link" target="_blank" rel="noreferrer">
-                    <i class="fas fa-graduation-cap"></i>
-                </a>
-                <a href="https://github.com/kimignis" class="social-link" target="_blank" rel="noreferrer">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/yourusername" class="social-link" target="_blank" rel="noreferrer">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
-            <div class="scroll-down">
-                <a href="#research"><i class="fas fa-chevron-down"></i></a>
-            </div>
-        </div>
-    </section>
+        <nav class="mobile-menu" id="mobile-menu" aria-label="모바일 메뉴" data-mobile-menu hidden>
+            <div data-mobile-nav-links></div>
+        </nav>
+    </header>
 
-    <main>
-        <!-- Research Section -->
-        <section id="research" class="section" data-aos="fade-up">
-            <!-- Research Interests -->
-            <div class="container">
-                <div class="neumorphism-card-big">
-                    <h2 class="section-title">Research Interests</h2>
-                    <div class="interests-grid">
-                        <div class="interest-item neumorphism-card">
-                            <i class="fas fa-brain"></i>
-                            <h3>Interest Area 1</h3>
-                            <p>Brief description of this research interest</p>
-                        </div>
-                        <div class="interest-item neumorphism-card">
-                            <i class="fas fa-robot"></i>
-                            <h3>Interest Area 2</h3>
-                            <p>Brief description of this research interest</p>
-                        </div>
-                        <div class="interest-item neumorphism-card">
-                            <i class="fas fa-chart-line"></i>
-                            <h3>Interest Area 3</h3>
-                            <p>Brief description of this research interest</p>
-                        </div>
-                        <div class="interest-item neumorphism-card">
-                            <i class="fas fa-microscope"></i>
-                            <h3>Interest Area 4</h3>
-                            <p>Brief description of this research interest</p>
-                        </div>
+    <main id="main-content">
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="hero-kicker" data-profile-kicker></p>
+                <h1 id="hero-title" data-profile-headline></h1>
+                <p class="hero-intro" data-profile-intro></p>
+
+                <div class="hero-actions">
+                    <a class="primary-link" href="#work">
+                        <span data-i18n="viewWork">작업 보기</span>
+                        <i data-lucide="arrow-down-right" aria-hidden="true"></i>
+                    </a>
+                    <a class="text-link" data-github-link target="_blank" rel="noopener noreferrer">
+                        <span>GitHub</span>
+                        <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="hero-meta">
+                    <div>
+                        <span class="meta-label" data-i18n="current">CURRENT</span>
+                        <span class="meta-value" data-profile-role></span>
+                    </div>
+                    <div>
+                        <span class="meta-label" data-i18n="based">AFFILIATION</span>
+                        <span class="meta-value" data-profile-affiliation></span>
                     </div>
                 </div>
             </div>
 
-            <!-- Research Experience -->
-            <div class="container" style="margin-top: 3rem;">
-                <div class="neumorphism-card-big">
-                    <h2 class="section-title">Research Experience</h2>
-                    <div class="experience-list">
-                        <div class="experience-item">
-                            <div class="experience-header">
-                                <div>
-                                    <h3>Graduate Research Assistant</h3>
-                                    <p class="institution">[Lab/Research Group Name], [University]</p>
-                                </div>
-                                <p class="period">[Start Date] - Present</p>
-                            </div>
-                            <div class="experience-content">
-                                <p><strong>Project:</strong> [Project Title]</p>
-                                <p><strong>Advisor:</strong> Prof. [Name]</p>
-                                <ul class="experience-details">
-                                    <li>Key responsibility or achievement 1</li>
-                                    <li>Key responsibility or achievement 2</li>
-                                    <li>Key responsibility or achievement 3</li>
-                                </ul>
-                                <div class="research-tags">
-                                    <span class="tag">Python</span>
-                                    <span class="tag">Machine Learning</span>
-                                    <span class="tag">Data Analysis</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="experience-item">
-                            <div class="experience-header">
-                                <div>
-                                    <h3>Research Intern / Undergraduate Researcher</h3>
-                                    <p class="institution">[Company/Lab Name]</p>
-                                </div>
-                                <p class="period">[Start Date] - [End Date]</p>
-                            </div>
-                            <div class="experience-content">
-                                <p><strong>Project:</strong> [Project Title]</p>
-                                <ul class="experience-details">
-                                    <li>Key contribution or achievement 1</li>
-                                    <li>Key contribution or achievement 2</li>
-                                    <li>Key contribution or achievement 3</li>
-                                </ul>
-                                <div class="research-tags">
-                                    <span class="tag">Methodology</span>
-                                    <span class="tag">Tool/Framework</span>
-                                </div>
-                            </div>
-                        </div>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="hero-motion" id="hero-motion">
+                    <div class="motion-fallback">
+                        <span class="fallback-orbit fallback-orbit-a"></span>
+                        <span class="fallback-orbit fallback-orbit-b"></span>
+                        <span class="fallback-core"></span>
                     </div>
                 </div>
+                <p class="visual-caption">QUESTION / EVIDENCE / TRACE</p>
             </div>
         </section>
 
-        <!-- Publications -->
-        <section id="publications" class="section" data-aos="fade-up">
-            <div class="container">
-                <div class="neumorphism-card-big">
-                    <h2 class="section-title">Publications</h2>
-                    <div class="publications-list">
-                        <!-- Journal Papers -->
-                        <div class="publication-category">
-                            <h3 class="category-title">Journal Papers</h3>
-                            <div class="publication-item">
-                                <h4>Full Title of Your Journal Paper</h4>
-                                <p class="authors"><strong>Kim Minsik</strong>, Co-author 1, Co-author 2</p>
-                                <p class="venue"><em>Journal Name</em>, Vol. X, No. Y, pp. ZZ-ZZ, Year</p>
-                                <p class="status-badge accepted">Published</p>
-                                <div class="publication-links">
-                                    <a href="#" class="btn-link neumorphism-btn"><i class="fas fa-file-pdf"></i> PDF</a>
-                                    <a href="#" class="btn-link neumorphism-btn"><i class="fas fa-code"></i> Code</a>
-                                    <a href="#" class="btn-link neumorphism-btn"><i class="fas fa-link"></i> DOI</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Conference Papers -->
-                        <div class="publication-category">
-                            <h3 class="category-title">Conference Papers</h3>
-                            <div class="publication-item">
-                                <h4>Title of Your Conference Paper</h4>
-                                <p class="authors"><strong>Kim Minsik</strong>, Co-author 1, Co-author 2</p>
-                                <p class="venue"><em>Conference Name (CONF'24)</em>, Location, Year</p>
-                                <p class="status-badge published">Published</p>
-                                <div class="publication-links">
-                                    <a href="#" class="btn-link neumorphism-btn"><i class="fas fa-file-pdf"></i> PDF</a>
-                                    <a href="#" class="btn-link neumorphism-btn"><i class="fas fa-presentation"></i> Slides</a>
-                                    <a href="#" class="btn-link neumorphism-btn"><i class="fas fa-video"></i> Video</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Preprints / Under Review -->
-                        <div class="publication-category">
-                            <h3 class="category-title">Preprints & Manuscripts</h3>
-                            <div class="publication-item">
-                                <h4>Title of Paper Under Review</h4>
-                                <p class="authors">Co-author 1, <strong>Kim Minsik</strong>, Co-author 2</p>
-                                <p class="venue"><em>Submitted to [Journal/Conference Name]</em>, Year</p>
-                                <p class="status-badge under-review">Under Review</p>
-                                <div class="publication-links">
-                                    <a href="#" class="btn-link neumorphism-btn"><i class="fab fa-arxiv"></i> arXiv</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <section class="section focus-section" id="focus" aria-labelledby="focus-title">
+            <div class="section-heading">
+                <p class="section-index">01</p>
+                <div>
+                    <p class="section-label" data-i18n="focusLabel">RESEARCH APPROACH</p>
+                    <h2 id="focus-title" data-i18n="focusTitle">생각을 연구로 바꾸는 방식</h2>
                 </div>
+                <p class="section-lede" data-i18n="focusLede">질문에서 결과 공유까지, 반복 가능한 흐름을 중요하게 생각합니다.</p>
+            </div>
+            <div class="focus-list" data-focus-list></div>
+        </section>
+
+        <section class="section work-section" id="work" aria-labelledby="work-title">
+            <div class="section-heading">
+                <p class="section-index">02</p>
+                <div>
+                    <p class="section-label" data-i18n="workLabel">SELECTED WORK</p>
+                    <h2 id="work-title" data-i18n="workTitle">진행 중인 탐구와 작업</h2>
+                </div>
+                <p class="section-lede" data-i18n="workLede">문제, 과정, 결과가 드러나는 기록을 남깁니다.</p>
+            </div>
+            <div class="work-list" data-work-list></div>
+        </section>
+
+        <section class="section publication-section" id="publications" aria-labelledby="publication-title" data-publication-section hidden>
+            <div class="section-heading">
+                <p class="section-index">03</p>
+                <div>
+                    <p class="section-label" data-i18n="publicationLabel">PUBLICATIONS</p>
+                    <h2 id="publication-title" data-i18n="publicationTitle">논문과 발표</h2>
+                </div>
+            </div>
+            <div class="publication-list" data-publication-list></div>
+        </section>
+
+        <section class="section profile-section" id="profile" aria-labelledby="profile-title">
+            <div class="section-heading">
+                <p class="section-index" data-profile-index>03</p>
+                <div>
+                    <p class="section-label" data-i18n="profileLabel">PROFILE</p>
+                    <h2 id="profile-title" data-i18n="profileTitle">작업의 배경과 도구</h2>
+                </div>
+                <p class="section-lede" data-profile-bio></p>
+            </div>
+            <div class="profile-grid">
+                <div class="profile-statement">
+                    <p class="statement-mark">“</p>
+                    <p data-profile-statement></p>
+                </div>
+                <div class="skill-columns" data-skill-list></div>
             </div>
         </section>
 
-        <!-- CV Section (Education, Skills, Awards) -->
-        <section id="cv" class="section" data-aos="fade-up">
-            <!-- Education -->
-            <div class="container">
-                <div class="neumorphism-card-big">
-                    <h2 class="section-title">Education</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h3>Master's / Ph.D. in [Your Field]</h3>
-                                <p class="institution">[Your University], [Department]</p>
-                                <p class="period">[Start Year] - Present (Expected [Graduation Year])</p>
-                                <p class="description">
-                                    <strong>Advisor:</strong> Prof. [Advisor Name]<br>
-                                    <strong>Thesis:</strong> [Thesis Title or Topic]<br>
-                                    <strong>GPA:</strong> X.XX/4.0 (if applicable)<br>
-                                    <strong>Relevant Coursework:</strong> [Course 1], [Course 2], [Course 3]
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h3>Bachelor of [Science/Arts] in [Major]</h3>
-                                <p class="institution">[Your University], [Department]</p>
-                                <p class="period">[Start Year] - [Graduation Year]</p>
-                                <p class="description">
-                                    <strong>GPA:</strong> X.XX/4.0<br>
-                                    <strong>Honors:</strong> [Summa Cum Laude / Magna Cum Laude / Dean's List / etc.]<br>
-                                    <strong>Minor:</strong> [Minor if applicable]
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="contact-copy">
+                <p class="section-label" data-i18n="contactLabel">CONTACT</p>
+                <h2 id="contact-title" data-contact-heading></h2>
+                <p data-contact-body></p>
             </div>
-
-            <!-- Skills -->
-            <div class="container" style="margin-top: 3rem;">
-                <div class="neumorphism-card-big">
-                    <h2 class="section-title">Skills</h2>
-                    <div class="skills-grid">
-                        <div class="skill-category neumorphism-card">
-                            <h3>Programming Languages</h3>
-                            <ul>
-                                <li>Python</li>
-                                <li>R</li>
-                                <li>MATLAB</li>
-                                <li>C/C++</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category neumorphism-card">
-                            <h3>Tools & Frameworks</h3>
-                            <ul>
-                                <li>TensorFlow / PyTorch</li>
-                                <li>Git / GitHub</li>
-                                <li>LaTeX</li>
-                                <li>Jupyter</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category neumorphism-card">
-                            <h3>Research Skills</h3>
-                            <ul>
-                                <li>Data Analysis</li>
-                                <li>Statistical Modeling</li>
-                                <li>Literature Review</li>
-                                <li>Scientific Writing</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category neumorphism-card">
-                            <h3>Languages</h3>
-                            <ul>
-                                <li>Korean (Native)</li>
-                                <li>English (Fluent)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Awards & Honors -->
-            <div class="container" style="margin-top: 3rem;">
-                <div class="neumorphism-card-big">
-                    <h2 class="section-title">Awards & Honors</h2>
-                    <div class="awards-list">
-                        <div class="award-item">
-                            <div class="award-icon"><i class="fas fa-trophy"></i></div>
-                            <div class="award-content">
-                                <h3>Award/Scholarship Name</h3>
-                                <p class="award-org">Awarding Organization</p>
-                                <p class="period">Year</p>
-                            </div>
-                        </div>
-                        <div class="award-item">
-                            <div class="award-icon"><i class="fas fa-medal"></i></div>
-                            <div class="award-content">
-                                <h3>Honor/Fellowship Name</h3>
-                                <p class="award-org">Awarding Organization</p>
-                                <p class="period">Year</p>
-                            </div>
-                        </div>
-                        <div class="award-item">
-                            <div class="award-icon"><i class="fas fa-award"></i></div>
-                            <div class="award-content">
-                                <h3>Competition/Contest Achievement</h3>
-                                <p class="award-org">Event Name</p>
-                                <p class="period">Year</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="section" data-aos="fade-up">
-            <div class="container">
-                <div class="neumorphism-card-big">
-                    <h2 class="section-title">Contact</h2>
-                    <div class="contact-content">
-                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> kimignis@example.edu</p>
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Office:</strong> Building Name, Room Number</p>
-                        <p><i class="fas fa-university"></i> <strong>Address:</strong> Department, University, City, Country</p>
-                    </div>
-                    <div class="social-links-large">
-                        <a href="mailto:kimignis@example.edu" target="_blank" class="social-btn neumorphism-btn">
-                            <i class="fas fa-envelope"></i> Email
-                        </a>
-                        <a href="#" target="_blank" class="social-btn neumorphism-btn">
-                            <i class="fas fa-graduation-cap"></i> Google Scholar
-                        </a>
-                        <a href="https://github.com/kimignis" target="_blank" class="social-btn neumorphism-btn">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="#" target="_blank" class="social-btn neumorphism-btn">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <div class="contact-actions" data-contact-links></div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Kim Minsik. All rights reserved.</p>
-            <p>Last updated: October 2025</p>
-        </div>
+    <footer class="site-footer">
+        <p><span data-profile-name-en>Minsik Kim</span> <span aria-hidden="true">/</span> <span data-current-year></span></p>
+        <a href="#home">
+            <span data-i18n="backToTop">맨 위로</span>
+            <i data-lucide="arrow-up" aria-hidden="true"></i>
+        </a>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <noscript>
+        <div class="noscript-message">이 사이트의 콘텐츠를 보려면 JavaScript를 활성화해주세요.</div>
+    </noscript>
+
+    <script defer src="content.js"></script>
+    <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script defer src="script.js"></script>
 </body>
 </html>

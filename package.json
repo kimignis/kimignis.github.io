@@ -1,0 +1,19 @@
+{
+  "name": "kimignis-research-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bilingual research portfolio for GitHub Pages",
+  "scripts": {
+    "preview": "node tests/server.cjs",
+    "check": "node --check content.js && node --check script.js && node tests/validate-content.cjs",
+    "test": "playwright test",
+    "test:visual": "playwright test --grep @visual",
+    "test:update": "playwright test --grep @visual --update-snapshots"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
