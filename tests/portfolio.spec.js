@@ -43,6 +43,14 @@ test("explores the industrial AI research matrix with accessible controls", asyn
     await expect(page.locator("[data-scroll-progress]")).toHaveCount(1);
 });
 
+test("explores the research operating loop", async ({ page }) => {
+    const evidenceStep = page.locator("[data-research-loop-step='2']");
+    await expect(evidenceStep).toHaveCount(1);
+    await evidenceStep.click();
+    await expect(evidenceStep).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("[data-research-loop-readout] [data-research-loop-title]")).toContainText("판단 근거를 사람의 언어로");
+});
+
 test("shows verified LinkedIn profile and credentials", async ({ page }) => {
     const linkedIn = page.getByRole("link", { name: "LinkedIn" });
     await expect(linkedIn).toHaveAttribute("href", /linkedin\.com\/in\//);
@@ -73,6 +81,15 @@ test("renders the publication bibliography, awards, and manuscript states", asyn
     await expect(page.getByRole("heading", { name: "생성형 AI를 활용한 대화형 공정 모니터링 지원 시스템 개발" })).toHaveCount(1);
 });
 
+test("filters the publication archive without removing bibliography entries", async ({ page }) => {
+    const internationalJournalFilter = page.locator("[data-publication-filter='international-journal']");
+    await internationalJournalFilter.click();
+    await expect(internationalJournalFilter).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("[data-publication-category='international-journal']")).toBeVisible();
+    await expect(page.locator("[data-publication-category='domestic-conference']")).toBeHidden();
+    await expect(page.locator(".publication-item")).toHaveCount(16);
+});
+
 test("presents current and past research projects", async ({ page }) => {
     await expect(page.locator("[data-work-list] .work-item")).toHaveCount(18);
     await expect(page.locator("[data-project-status='ongoing'] .work-item")).toHaveCount(4);
@@ -83,6 +100,25 @@ test("presents current and past research projects", async ({ page }) => {
     await expect(page.getByRole("heading", { name: "설비 및 공정 통합 관제를 위한 제조 특화 SLM(소규모언어모델) 개발" })).toHaveCount(1);
     await expect(page.getByText("SK하이닉스㈜", { exact: true })).toHaveCount(1);
     await expect(page.locator('.work-year[aria-label="2026.02.09—2026.12"]')).toHaveCount(1);
+});
+
+test("expands the complete past-project timeline", async ({ page }) => {
+    await expect(page.locator(".past-work.is-collapsed")).toHaveCount(8);
+    const toggle = page.locator("[data-project-toggle]");
+    await toggle.click();
+    await expect(toggle).toHaveAttribute("aria-expanded", "true");
+    await expect(page.locator(".past-work.is-collapsed")).toHaveCount(0);
+});
+
+test("mobile navigation covers the viewport instead of overlapping the page", async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== "mobile", "Mobile-only layout assertion");
+    await page.getByRole("button", { name: "메뉴 열기" }).click();
+    const dimensions = await page.locator("[data-mobile-menu]").evaluate((menu) => {
+        const rect = menu.getBoundingClientRect();
+        return { top: rect.top, bottom: rect.bottom, viewport: window.innerHeight };
+    });
+    expect(dimensions.top).toBeGreaterThanOrEqual(70);
+    expect(dimensions.bottom).toBeGreaterThanOrEqual(dimensions.viewport - 1);
 });
 
 test("@visual hero remains visually stable", async ({ page }) => {
