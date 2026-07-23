@@ -64,7 +64,7 @@
     <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600&display=swap">
-    <link rel="stylesheet" href="style.css?v=20260722-project-groups">
+    <link rel="stylesheet" href="style.css?v=20260723-editorial-research">
 </head>
 <body>
     <a class="skip-link" href="#main-content" data-i18n="skipLink">본문으로 바로가기</a>
@@ -118,6 +118,7 @@
                     <p><span data-i18n="current">CURRENT</span><strong data-profile-role></strong></p>
                     <p><span data-i18n="affiliation">AFFILIATION</span><strong data-profile-affiliation></strong></p>
                 </div>
+                <dl class="hero-signals" aria-label="연구 활동 요약" data-hero-signals></dl>
                 <div class="hero-actions">
                     <a class="primary-link" href="#profile">
                         <span data-i18n="viewProfile">프로필 살펴보기</span>
@@ -178,14 +179,37 @@
             </div>
             <div class="profile-content">
                 <p class="section-lede" data-profile-bio></p>
-                <section class="profile-block" aria-labelledby="education-title">
-                    <header class="profile-block-heading">
-                        <h3 id="education-title" data-i18n="educationTitle">학력과 경험</h3>
-                        <span>01</span>
+
+                <section class="research-process" aria-labelledby="research-process-title">
+                    <header class="research-process-heading">
+                        <div>
+                            <p data-i18n="researchLoopLabel">RESEARCH OPERATING LOOP</p>
+                            <h3 id="research-process-title" data-i18n="researchLoopTitle">현장의 질문이 설명 가능한 의사결정이 되는 과정</h3>
+                        </div>
+                        <span data-i18n="researchLoopInstruction">단계를 선택해 연구 방식을 살펴보세요.</span>
                     </header>
-                    <div class="education-list" data-education-list></div>
+                    <div class="research-process-grid" data-research-loop></div>
+                    <article class="research-process-readout" aria-live="polite" data-research-loop-readout>
+                        <span data-research-loop-index>01 / 04</span>
+                        <div>
+                            <p data-research-loop-label>QUESTION</p>
+                            <h4 data-research-loop-title></h4>
+                            <p data-research-loop-description></p>
+                        </div>
+                    </article>
                 </section>
-                <div class="credential-list" data-credential-list></div>
+
+                <div class="profile-record-grid">
+                    <section class="profile-block education-block" aria-labelledby="education-title">
+                        <header class="profile-block-heading">
+                            <h3 id="education-title" data-i18n="educationTitle">학력과 경험</h3>
+                            <span>01</span>
+                        </header>
+                        <div class="education-list" data-education-list></div>
+                    </section>
+                    <aside class="credential-list" aria-label="자격증 및 수료증" data-credential-list></aside>
+                </div>
+
                 <section class="profile-research" aria-labelledby="profile-research-title">
                     <header class="profile-block-heading">
                         <h3 id="profile-research-title" data-i18n="profileResearchTitle">관심 연구 영역</h3>
@@ -206,7 +230,28 @@
             </div>
             <div class="section-body">
                 <p class="section-lede" data-i18n="publicationLede">국내외 학술대회와 저널을 구분해 연구 기록을 정리합니다.</p>
-                <div class="publication-list" data-publication-list></div>
+
+                <section class="publication-showcase" aria-labelledby="selected-publication-title">
+                    <header class="content-heading">
+                        <div>
+                            <p data-i18n="selectedPublicationLabel">SELECTED RESEARCH</p>
+                            <h3 id="selected-publication-title" data-i18n="selectedPublicationTitle">지금 주목할 연구</h3>
+                        </div>
+                        <span data-i18n="selectedPublicationNote">수상·투고·리뷰 중인 연구를 우선 보여줍니다.</span>
+                    </header>
+                    <div class="featured-publications" data-featured-publications></div>
+                </section>
+
+                <section class="publication-archive" aria-labelledby="publication-archive-title">
+                    <header class="archive-heading">
+                        <div>
+                            <p data-i18n="archiveLabel">RESEARCH ARCHIVE</p>
+                            <h3 id="publication-archive-title" data-i18n="archiveTitle">전체 연구 기록</h3>
+                        </div>
+                        <div class="publication-filters" role="group" aria-label="논문 유형 필터" data-publication-filters></div>
+                    </header>
+                    <div class="publication-list" data-publication-list></div>
+                </section>
             </div>
         </section>
 
@@ -218,6 +263,7 @@
             </div>
             <div class="section-body">
                 <p class="section-lede" data-i18n="workLede">현재 진행 중인 과제와 완료한 산업체·정부 R&amp;D 과제를 참여기간과 역할 중심으로 정리했습니다.</p>
+                <dl class="project-signals" aria-label="연구 과제 요약" data-project-signals></dl>
                 <div class="work-list" data-work-list></div>
             </div>
         </section>
@@ -242,6 +288,6 @@
     <script defer src="content.js?v=20260722-project-update"></script>
     <script defer src="vendor/lucide.min.js?v=0.468.0"></script>
     <script defer src="vendor/lottie.min.js?v=5.12.2"></script>
-    <script defer src="script.js?v=20260722-project-groups"></script>
+    <script defer src="script.js?v=20260723-editorial-research"></script>
 </body>
 </html>
